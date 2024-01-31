@@ -1,0 +1,42 @@
+#================================================================================
+# HD
+#================================================================================
+# Sistema: Debian e Ubuntu
+# Atualizacao: 15/09/23
+# Autor: Alefy Gonzaga
+
+# ====== Clone ====== #
+
+# Clonar disco
+sudo dd if=/dev/sda5 of=/media/outro-disco/clone.dd bs=512 conv=noerror,sync
+
+
+# ====== Montagem e manutencao ====== #
+
+# Exibir HDs e partições identificadas pelo sistema
+ls /dev/sd*
+
+# Criar partição 
+cfdisk /dev/sdb
+
+# Formatar partição
+mkfs.ext4 /dev/sdb1
+
+# Criar diretorio onde a partição será montada
+mkdir /mnt/musicas
+
+# Montar manualmente a partição
+mount -t ext4 /dev/sdb1 /mnt/musicas/
+
+# Montar automaticamente a partição (Utilizando fstab)
+
+# Identificar uid 
+blkid
+
+# Adicionar ao fstab
+vim /etc/fstab
+
+/dev/disk/by-uuid/f88f19b3-f1af-4f46-a456-8a3521409f27 /mnt/musicas ext4 defaults 0 1
+
+# montar HD 
+mount /mnt/musicas/

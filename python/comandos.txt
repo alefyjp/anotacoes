@@ -1,0 +1,41 @@
+# === Arquivos ===
+
+# Escrever no arquivo
+
+f = open("demofile2.txt", "a")
+f.write("Now the file has more content!")
+f.close()
+
+
+#open and read the file after the appending:
+f = open("demofile2.txt", "r")
+print(f.read())
+
+
+# Create a file called "myfile.txt":
+
+f = open("myfile.txt", "x")
+
+#Create a new file if it does not exist:
+
+f = open("myfile.txt", "w")
+
+# === Randon ===
+
+# Numerios randomicos
+
+# importing the random module
+import random
+
+print(random.randint(0,9))
+
+
+# === Diterorios =====
+
+# Listar arquivos
+
+import os
+pasta = './arquivos'
+for diretorio, subpastas, arquivos in os.walk(pasta):
+    for arquivo in arquivos:
+        print(os.path.join(diretorio, arquivo))

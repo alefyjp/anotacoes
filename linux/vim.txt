@@ -1,0 +1,43 @@
+# ============================================================================================
+# Titulo: Estudando VIM
+# Autor: Alefy Gonzaga
+# Ultima atualizacao: Wed Jan 31 09:01:18 -03 2024
+# ============================================================================================
+
+# --- Plugins --- #
+
+# nerdtree
+curl -sS https://webi.sh/vim-nerdtree | sh
+
+
+# --- [Comandos basicos] --- # 
+
+# Sair sem salvar
+:q!
+
+# Sair salvando
+:x!
+
+# --- [Pesquisar] --- # 
+
+/palavra
+
+
+# --- [Substituir] --- # 
+
+# --- [Abrir arquivo] --- #
+
+# --- [Split de janela] --- #
+
+# Novo arquivo vazio na horizontal
+Ctrl+w+n
+
+# --- [Comentar multiplas linhas] --- #
+
+# --- [Rodar comandos shell dentro do Vim] --- #
+
+# Rodar comando salvado retorno no arquivo VIM atual
+:r!cat meuarquivo.txt
+
+# Rodar comando sem salvar no arquivo VIM atual
+:!cat meuarquivo.txt

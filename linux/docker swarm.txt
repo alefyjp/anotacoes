@@ -1,0 +1,59 @@
+ 
+
+# ======= Swarm ======= #
+
+# Inicializar swarm primeiro swarm
+docker swarm init
+
+
+# Entrar em um swarm como worker
+docker swarm join --token SWMTKN-1-02hd6uqv4ghustj9g91s0ey6u9xnvsusc23w92fvdeqv3ict98-5di3glmp5s4vcecrcdco0ifo3 10.1.70.116:2377
+
+docker swarm join --token SWMTKN-1-3c8aaq8gcz8olwfd7ji2zk576a14f01stvyd74hlmvn5c87b57-83js2nhgidnkn7fauj7s31rqf 8.242.72.103
+
+
+# Entrar em um swarm como manager
+docker swarm join-token manager
+
+
+# Exibir token
+
+docker swarm join-token  -q worker
+docker swarm join-token  -q manager
+
+# Trocar token ()
+docker swarm join-token  --rotate manager
+docker swarm join-token  --rotate worker
+
+# ======= Node ======= #
+
+# Promover node para manager
+docker node promote swarm-node2
+
+# Remover node do swarm
+docker node rm swarm-node2
+
+# Exibir todos os nodes
+docker node ls
+
+# 
+docker node inspect swarm-node1 --pretty
+
+# Exibir tarefas rodandos em cada node
+docker node ps
+
+
+# Atualizar node
+docker node update
+
+Options:
+      --availability string   Availability of the node ("active", "pause", "drain")
+      --label-add list        Add or update a node label ("key=value")
+      --label-rm list         Remove a node label if exists
+      --role string           Role of the node ("worker", "manager")
+
+
+#
+docker node ps $(docker node ls -q)
+
+# ======= Service ======= #

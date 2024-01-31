@@ -1,0 +1,21 @@
+                                        50 - Quebra de senha 
+                               # Autor: Alefy Gonzaga # Data: 31/01/2023
+-----------------------------------------------------------------------------------------------------------
+#  
+-----------------------------------------------------------------------------------------------------------
+Alterar senha root - Grub
+
+No GRUB -> e
+Encontrar linha vm-linuz e adicionar no final -> init=/bin/bash
+
+Apos logar -> mount -o remount,rw /
+Trocar Senha -> passwd root
+
+
+
+
+
+
+
+
+

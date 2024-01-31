@@ -1,0 +1,30 @@
+# ==========================================================================================
+# KVM
+# ==========================================================================================
+
+# Sistema: Debian e Ubuntu
+# Atualizacao: 13/09/23
+# Autor: Alefy Gonzaga
+
+# Instalação
+sudo apt install qemu-system libvirt-daemon-system virtinst
+
+# Criando uma nova maquina virtual (fora do console virsh)
+virt-install --virt-type kvm --name windows7 --cdrom /tmp/windows7.iso --os-variant win7 --disk size=30 --memory 3000
+
+# Listando todas as máquinas virtuais (use o console virsh)
+Virsh
+list --all
+
+# Startando maquina virtuais (use o console virsh)
+start nome-maquina
+
+# Desligando máquina virtual
+destroy nome-maquina
+
+# Deletando uma máquina virtual
+undefine nome-maquina 
+
+# Abrindo janela da máquina virtual
+virt-viwer nome-maquina
+

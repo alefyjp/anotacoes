@@ -1,0 +1,24 @@
+#!/bin/python3
+# ==========================================================================================
+#  os
+# ==========================================================================================
+
+# Importar modulo do sistema operacional
+#import os
+
+# Limpar a tela
+#os.system("clear")
+
+# outros exemploes
+os.system("apt update -y")
+os.system("ip address")
+
+# criar uma pasta
+os.mkdir("nome-pasta")
+
+# Criar pastas com recussividade
+os.makedirs('./contratos/2016/12/9')
+
+# Verificar se a pasta existe
+if os.path.exists('/opt/projeto') == True:
+    print("a pasta existe")

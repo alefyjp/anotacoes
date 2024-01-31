@@ -1,0 +1,14 @@
+
+
+# Mover arquivo
+import shutil
+shutil.move("caminhoa/arquivo.txt", "caminhob/arquivo.txt")
+
+# Replace
+import os
+os.replace("caminhoa/arquivo.txt", "caminhob/arquivo.txt")
+
+
+# Renomear
+import os
+os.rename("caminhoa/arquivo.txt", "caminhob/arquivo.txt")

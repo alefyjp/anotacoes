@@ -1,0 +1,57 @@
+                                            04 Rotinas de CRON
+                               # Autor: Alefy Gonzaga # Data: 31/01/2023
+-----------------------------------------------------------------------------------------------------------
+#  Passo 1 - Verificar se o serviço do CRON esta ativo 
+-----------------------------------------------------------------------------------------------------------
+systemctl status cron
+
+-----------------------------------------------------------------------------------------------------------
+#  Passo 2 - Listando todas as rotinas existentes  
+-----------------------------------------------------------------------------------------------------------
+crontab -l                                  # Exibir rotinas de cron para o usuário atual(seu usuário)
+crontab -l -u silvio                        # Exibir rotinas de cron para um usuário em especifico (ex silvio)
+cat /etc/crontab                            # Exibir as rotinas de cron que serão aplicadas para todos os usuários
+
+-----------------------------------------------------------------------------------------------------------
+#  Passo 3 - Gerenciar as rotinas 
+-----------------------------------------------------------------------------------------------------------
+crontab -e                                  # Gerenciar rotinas de cron para o usuário atual(seu usuário)
+crontab -e -u silvio                        # Gerenciar rotinas de cron para um usuário em especifico (ex silvio)
+cat /etc/crontab                            # Gerenciar as rotinas de cron que serão aplicadas para todos os usuários
+
+-----------------------------------------------------------------------------------------------------------
+#  Passo 4 - Tabela de agendamento 
+-----------------------------------------------------------------------------------------------------------
+# Tabela do cron 
+Minuto |  Hora  |  Dia do mes |  Mes  |  Dia-da-semana
+(0-59)   (0-23)	   (1-31)	(1-12)	 (0-6) ou sun, mon, tue ...   # O sábado pode ser 0 e tbm 7
+
+
+# Exempo 1 - Rodando de minuto a minuto
+m  h  d   m  d
+*  *  *   *  *  echo 'Rodando cron a cada minuto, em toda as horas, todos os meses em todos os dias da semanda' >> /home/usuario/cron.log
+
+# Exemplo 2 -  Rodando uma rotina de backup todos os dias as 23 horas
+m  h  d  m   d
+0 23  *  *   * cp -R /home/samba /media/hd_externo/
+
+#ou
+m h     d  m   d
+0 */23  *  *   * cp -R /home/samba /media/hd_externo/
+
+# Exemplo 3 - Rodando script qualquer de 15 em 15 minutos, todos os dias de todos os meses em qualquer dia da semana
+m             h  d  m  d
+0,15,30,45    *  *  *  *  ./script_qualquer.sh
+
+#ou 
+*/15 * * * * ./script_qualquer.sh
+
+-----------------------------------------------------------------------------------------------------------
+#  Passo 5 - Variaveis  
+-----------------------------------------------------------------------------------------------------------
+# @daily        
+# O seu valor é  0 0 * * * , ou seja qualquer, todos os dias de todos os meses as 24:00
+
+# @hourly
+O seu valor é igual a 0 * * * *, ou seja, executa a cada hora
+

@@ -1,0 +1,110 @@
+#=======================================================================================
+# WSL
+#=======================================================================================
+# Instalar WSL via Poweshell
+wsl --install
+
+
+
+#Listar todas as imagens WSL disponiveis
+wsl --list --online
+
+# Criar nova máquina
+wsl --install -d ubuntu
+
+
+--------------------------------
+
+    --cd <Directory>
+        Define o diretório especificado como o diretório de trabalho atual.
+        Se ~ for usado, o caminho inicial do usuário do Linux será usado. Se o caminho começar
+        com um caractere, / ele será interpretado como um caminho Linux absoluto.
+        Caso contrário, o valor deve ser um caminho absoluto do Windows.
+
+    --distribuição,-d <Distro>
+        Executar a distribuição especificada.
+
+    --usuário,-u <UserName>
+        Executar como o usuário especificado.
+
+Argumentos para gerenciar o Subsistema do Windows para Linux:
+
+    --ajuda
+        Exibir informações de uso.
+
+    --install [Opções]
+        Instale distribuições adicionais para o Subsistema do Windows para Linux.
+        Para uma lista de distribuições válidas, use "wsl --list --online".
+            --distribution, -d [Argumento]
+                Baixa e instala uma distribuição pelo seu nome.
+
+                Argumentos:
+                    Um nome de distribuição válido (sem diferenciar maiúsculas de minúsculas).
+
+                Exemplos:
+                    wsl --install -d Ubuntu
+                    wsl --install --distribution Debian
+
+    --set-default-version <Versão>
+        Altera a versão de instalação padrão para novas distribuições.
+
+    --shutdown
+        Encerra imediatamente todas as distribuições em execução e
+        a máquina virtual do utilitário leve do WSL 2.
+
+    --status
+        Mostra o status do Subsistema do Windows para Linux.
+
+    --update [Opções]
+        Se nenhuma opção for especificada, o kernel WSL 2 será atualizado
+        para a versão mais recente.
+
+        Opções:
+            --rollback
+                Reverte para a versão anterior do kernel WSL 2.
+
+Argumentos para gerenciar distribuições no Subsistema do Windows para Linux:
+
+    --export <Distro> <Nome do arquivo>
+        Exporta a distribuição para um arquivo tar.
+        O nome do arquivo pode ser - para saída padrão.
+
+    --import <Distro> <Local da instalação> <Nome do arquivo> [Opções]
+        Importa o arquivo tar especificado como uma nova distribuição.
+         O nome do arquivo pode ser - para entrada padrão.
+
+        Opções:
+            --all
+                Especifica a versão a ser usada para a nova distribuição.
+
+    --list, -l [Opções]
+        Listas de distribuições.
+
+        Opções:
+            --all
+                Lista todas as distribuições, incluindo distribuições que estão
+                sendo instaladas ou desinstaladas no momento.
+
+            --running
+                Lista apenas as distribuições que estão em execução.
+
+            --quiet, -q
+                Mostrar apenas nomes de distribuição.
+
+            --verbose, -v
+                Mostra informações detalhadas sobre todas as distribuições.
+
+            --online, -o
+                Exibe uma lista de distribuições disponíveis para instalação com "wsl --install".
+
+    --set-default, -s <Distro>
+        Define a distribuição como padrão.
+
+    --set-version <Distro> <Versão>
+        Altera a versão da distribuição especificada.
+
+    --terminate, -t <Distro>
+        Encerra a distribuição especificada.
+
+    --unregister <Distro>
+        Cancela o registro da distribuição e exclui o sistema de arquivos raiz.

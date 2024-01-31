@@ -1,0 +1,29 @@
+# ==========================================================================================
+# GIT
+# ==========================================================================================
+# Sistema: Debian e Ubuntu
+# Atualizacao: 13/09/23
+# Autor: Alefy Gonzaga
+
+# ===== Clone ===== #
+
+# Criar pasta para repositorios git
+mkdir Git
+
+# Clonar repositorio
+git clone https://github.com/alefyjp/infradocs
+
+# ===== Baixar informacoes ===== #
+
+# Pull
+git pull https://github.com/alefyjp/infradocs
+
+# ===== Enviar dados ===== #
+
+# Passo 01 - Adicionar todas as modificações ao commit
+git add -A
+
+# commit
+git commit -m 23-01-24
+ 
+git push https://github.com/alefyjp/infradocs

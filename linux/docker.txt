@@ -1,0 +1,50 @@
+#====================================================================================
+# DOCKER
+# Autor: Alefy
+# Autalizacao: 16/06/2023
+#====================================================================================
+# Novo container
+docker run --name container-teste nginx
+docker run --name container-teste -p 80:8080 nginx
+
+# Copiar arquivo ou diretorio do container
+docker cp container-teste:/etc/nginx/teste.txt /opt/docker/nginx/
+docker cp container-teste:/etc/nginx/. /opt/docker/nginx
+
+# Conectar ao container
+docker exec -it teste sh
+
+# Configuração dos Pools de IPS default do Docker. (altera o ip da interface virtua docker0). 
+#/etc/docker/daemon.json
+
+{
+
+ "default-address-pools": [
+
+   {
+
+     "scope": "local",
+
+     "base": "172.80.0.0/16",
+
+     "size": 24
+
+   },
+
+   {
+
+     "scope": "global",
+
+     "base": "172.90.0.0/16",
+
+     "size": 24
+
+   }
+
+ ]
+
+}
+
+
+
+

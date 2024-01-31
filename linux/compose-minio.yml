@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  minio:
+    container_name: minio
+    image: quay.io/minio/minio
+    ports:
+            - 9000:9000
+            - 9090:9090
+    volumes:
+            - /opt/docker/minio/data:/data
+            - /opt/docker/minio/certs/:/root/.minio/certs
+    environment:
+            - MINIO_ROOT_USER=root
+            - MINIO_ROOT_PASSWORD=mudar123456
+    entrypoint: minio
+    command: server /data --console-address ":9090"
+#    networks:
+#        siga:
+#            ipv4_address: '172.18.0.225'

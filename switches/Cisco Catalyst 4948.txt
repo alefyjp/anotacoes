@@ -1,0 +1,39 @@
+#=====================================================================================
+# SWITCH CISCO - CATALYST 4948
+#=====================================================================================
+
+[Bootar IOS externo via romon]
+
+set ip route default 192.168.1.1
+set interface fa1 192.168.1.2 255.255.255.0 192.168.1.255
+set TftpServer 192.168.1.1
+
+boot tftp://192.168.1.1/cat4500-ipbase-mz.122-46.SG.bin
+
+
+[IOS via TFTP]
+
+(config)
+ip default-gateway 192.168.1.1
+
+(#)
+copy tftp flash
+
+set ip route default 192.168.1.1;set interface fa1 192.168.1.2 255.255.255.0 192.168.1.255;set TftpServer 192.168.1.1
+
+boot tftp://192.168.1.1/cat4500-ipbase-mz.122-46.SG.bin
+
+copy tftp flash
+
+
+# --- Configurando portas combo ---S
+
+# Apagando configurações
+(#)
+erase startup-config
+reload
+
+(config)
+interface range gi 1/45 - 48
+
+media-type rj45

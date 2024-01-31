@@ -1,0 +1,10 @@
+version: '3'
+services:
+    nginx:
+        volumes:
+            - '/opt/docker/nginx/default.conf:/etc/nginx/nginx.conf-d/default.conf'
+            - '/opt/docker/nginx/html/:/usr/share/nginx/html'  
+        ports:
+            - '80:80'
+            - '443:443'  
+        image: nginx

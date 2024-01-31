@@ -1,0 +1,18 @@
+# Limpar carche do servidor DHCP
+echo > /var/dhcpd/var/db/dhcpd.leases
+############### Terminal ###################
+
+# Habilitar acesso na WAN
+easyrule pass wan tcp any any 443
+
+##################  Web ####################
+
+# Acesso via Web
+IP: 192.168.1.1
+Usuário: admin
+Senha: pfsense
+
+# Habilitar SSH 
+# System-> Advanced-> Admin Access
+# Na guia de acesso administração, localize o ares de configuração Secure Shell.
+

@@ -1,0 +1,12 @@
+.cer (contem a chave publica)
+.pfx ( contem .ctr e .rsa)
+
+
+
+
+# Extrair dados arquivo .pfx
+
+openssl pkcs12 -in ./YOUR-PFX-FILE.pfx -clcerts -nokeys -out domain.crt
+
+openssl pkcs12 -in ./YOUR-PFX-FILE.pfx -nocerts -nodes -out domain.rsa
+

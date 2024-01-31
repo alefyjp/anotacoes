@@ -1,0 +1,5 @@
+# Criar link
+ln -s /home/empresa/backup/ bkp
+
+# Listar links criados 
+ls -l

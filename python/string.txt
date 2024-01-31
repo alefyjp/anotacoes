@@ -1,0 +1,3 @@
+# Verificar se uma palavra está contina em uma frase
+if ".rtf" in arquivo or ".doc" in arquivo or ".docm" in arquivo or ".docx" in arquivo:
+                print(".arquivo word encontrado")

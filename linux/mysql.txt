@@ -1,0 +1,2 @@
+# Conectar ao MYSQL - Docker
+docker exec -it mysql mysql -uroot -plab123

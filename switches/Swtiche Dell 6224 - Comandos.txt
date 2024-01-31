@@ -1,0 +1,68 @@
+------ Default reset ------
+delete startup-config
+
+----- Hora ----
+show clock
+show sntp configuration
+
+------ Configurações Gerais ------
+# Hostname
+ 
+(config) hostname sw-teste-infra
+
+
+
+------ VLANs ------
+(#) show vlan
+
+# Ver interfaces de uma vlan
+(#) show vlan id 1
+
+
+
+
+------ Interfaces ------
+(#) show interfaces configuration
+(#) show interfaces Description
+(#) show interfaces status
+
+
+
+
+
+(configure) interface range vlan
+
+
+# Exibe todas as informações da interface 
+(#) show interfaces switchport ethernet 1/g1         
+
+
+------ SNMP ------
+(#) show snmp
+
+console(config)# snmp-server community visual rw 10.1.2.20
+console(config)#snmp-server community visual rw ipaddress 10.1.2.20
+
+console(config)# snmp-server enable traps all
+
+console(config)# snmp-server trap authentication
+console(config)# snmp-server host 10.1.2.20 visual
+		 snmp-server host 10.1.2.20 visual informs
+       (config)#snmp-server host 10.1.2.20 visual traps v2
+
+console(config)# snmp-server host 10.1.2.20 visual informs
+
+
+console(config)# snmp contact alefy
+console(config)# snmp location cpd_visual
+
+no snmp-server host 10.1.128.20 informs
+
+------ IP ------
+show ip interface
+
+
+
+
+
+Access attempted by unauthorized NMS
