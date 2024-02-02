@@ -4,7 +4,6 @@
 ARQUIVO_TOKEN="../git_token.txt"
 DATAHORA=$(date)
 
-
 # ===== Enviar dados ===== #
 echo "=="
 echo "Arquivos que serao enviados"
