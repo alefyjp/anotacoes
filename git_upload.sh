@@ -1,14 +1,18 @@
 #!/bin/bash
-
-# [Global]
+# ============================================================================
+# Titulo: Git upload
+# Autor: Alefy Gonzaga
+# Alvo: Git, Linux
+# ============================================================================
+#[Global]
 ARQUIVO_TOKEN="../git_token.txt"
 DATAHORA=$(date)
 
-# [Envio]
+#[Envio]
 echo "=="
 echo "Arquivos que serao enviados"
 git add -A
-git commit -m "Alterado em: $DATAHORA"
+git commit -m "Alteracao: $DATAHORA"
 
 echo "=="
 echo "Utilize o token: "
