@@ -4,7 +4,7 @@
 ARQUIVO_TOKEN="../git_token.txt"
 DATAHORA=$(date)
 
-# ===== Enviar dados ===== #
+# [Envio]
 echo "=="
 echo "Arquivos que serao enviados"
 git add -A
@@ -19,3 +19,4 @@ echo""
 echo "=="
 echo "Realizando envio dos arquivos"
 git push
+
