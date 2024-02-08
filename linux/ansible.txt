@@ -33,8 +33,8 @@ cd /root/ && mkdir ansible && cd ansible
 # --- hosts --- # 
 
 # Criar arquivo de inventario
-mkdir hosts
-vim linux
+mkdir inventario
+vim inventario/linux
 
 [ubuntu]
 192.168.99.1
@@ -42,15 +42,15 @@ vim linux
 192.168.99.254
 
 # Testando comunicacao
-ansible all -m ping -i hosts
+ansible all -m ping -i inventario
 
 # --- Executar comandos (utilizando o modulo shell) --- #
 
 # Obter versao do sistema
-ansible all -m shell -a "cat /etc/os-release && echo --" -i hosts
+ansible all -m shell -a "cat /etc/os-release && echo --" -i inventario
 
 # Obter informacoes de RAM
-ansible all -m shell -a "free -h && echo --" -i hosts
+ansible all -m shell -a "free -h && echo --" -i inventario
 
 # --- Playbook (automatizacao de tarefas) --- #
 
