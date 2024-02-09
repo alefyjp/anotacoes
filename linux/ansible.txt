@@ -113,7 +113,14 @@ vim padronizacao.yml
 
 
 
+# -- fim --
 
+# testar playbook (simula as alterações, sem aplicar)
+ansible-playbook --check padronizar.yaml
+ansible-playbook -c padronizar.yaml
+
+# Executar um playbook
+ansible# ansible-playbook padronizar.yaml -i inventario
 
 
 
