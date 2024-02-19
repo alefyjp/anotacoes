@@ -25,10 +25,6 @@ console# config
 load factory-config 
 SW-CORE(config)# commit
 
-
-# Salvar alterações 
-descobri....
-
 # Alterar hostname 
 
 console(config)# hostname SW-CORE
@@ -131,19 +127,7 @@ SW-CORE# show system memory
 SW-CORE# debug enable interface cfm-linktrace link-status
 SW-CORE# debug enable interface cfm-discard
 
-
-
 # [Rollback e Outros] -----------#
 SW-CORE(config)# save producao
 SW-CORE(config)# load override producao
-
-
-
-
-commit abort
-
-
-
-
-
 
