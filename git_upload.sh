@@ -12,7 +12,7 @@ DATAHORA=$(date)
 echo "=="
 echo "Arquivos que serao enviados"
 git add -A
-git commit -m "Alteracao: $DATAHORA"
+git commit -m "$DATAHORA"
 
 echo "=="
 echo "Utilize o token: "
