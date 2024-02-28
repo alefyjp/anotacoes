@@ -27,8 +27,73 @@ console# config
 copy running-config startup-config
 
 # Alterar hostname 
-
 console(config)# hostname SW-ACESSO-A
+
+
+# [VLANs] -----------#
+
+# Criar uma VLAN
+SW-ACESSO-A(config)# vlan 270
+
+
+# Renomear VLAN
+SW-ACESSO-A(config)# interface vlan 270
+SW-ACESSO-A(config-if)# name P&D
+
+# [Interface - VLANs] -----------#
+
+# Habilitar interface como trunk
+
+SW-ACESSO-A(config)# interface tengigabitethernet 1/0/1
+
+SW-ACESSO-A(config-if)# no shut
+
+SW-ACESSO-A(config-if)# description SW-CORE-UPLINK
+
+SW-ACESSO-A(config-if)# switchport mode trunk
+
+SW-ACESSO-A(config-if)# switchport trunk allowed vlan add 131
+
+-------------------------
+switchport trunk allowed vlan remove 1-4094
+
+# Verificar as configurações de uma interface
+SW-ACESSO-A(config-if)# show interfaces switchport tengigabitethernet 1/0/1
+
+
+# Adicionar varias interfaces em uma vlan
+SW-ACESSO-A(config)# interface range gigabitethernet1/0/1 - 30
+
+no shut
+
+SW-ACESSO-A(config-if-range)# switchport mode access
+SW-ACESSO-A(config-if-range)# switchport access vlan 131
+
+
+# [Data, hora e timezone] -----------#
+
+# Verificar data/hora e timezone
+SW-ACESSO-A# show clock detail
+
+# Setar hora e data
+SW-ACESSO-A# clock set 08:21:00 18 jan 2024
+
+SW-ACESSO-A(config)# clock timezone BRA -3
+
+
+
+
+# [VLAN de gerencia]
+
+# Criar vlan
+SW-ACESSO-A(config)# interface vlan 206
+
+SW-ACESSO-A(config-if)# name GERENCIA
+SW-ACESSO-A(config-if)# ip address 10.1.6.3 255.255.255.0
+
+
+# [Rota padrao do switch]
+SW-ACESSO-A(config)# ip route 0.0.0.0 0.0.0.0 10.1.6.1
 
 
 # [Stack] -----------#
@@ -57,67 +122,3 @@ Pressionar Esc até aparecer o startup menu
 [2]  Set unit stack id
 [3]  Back
  Enter your choice or press 'ESC' to exit:
-
-
-# [VLANs] -----------#
-
-# Criar uma VLAN
-SW-ACESSO-A(config)# vlan 270
-
-
-# Renomear VLAN
-SW-ACESSO-A(config)# interface vlan 270
-SW-ACESSO-A(config-if)# name P&D
-
-# [Interface - VLANs] -----------#
-
-# Habilitar interface como trunk
-
-SW-ACESSO-A(config)# interface tengigabitethernet 1/0/1
-
-SW-ACESSO-A(config-if)# no shut
-
-SW-ACESSO-A(config-if)# description SW-CORE-UPLINK
-
-SW-ACESSO-A(config-if)# switchport mode trunk
-
-SW-ACESSO-A(config-if)# switchport trunk allowed vlan add 131
-
-
-# Verificar as configurações de uma interface
-SW-ACESSO-A(config-if)# show interfaces switchport tengigabitethernet 1/0/1
-
-
-# Adicionar varias interfaces em uma vlan
-SW-ACESSO-A(config)# interface range gigabitethernet1/0/1 - 30
-
-no shut
-
-SW-ACESSO-A(config-if-range)# switchport mode access
-
-
-
-
-
-# [Interface - VLANs] -----------#
-
-SW-ACESSO-A(config-if-range)# switchport mode access
-SW-ACESSO-A(config-if-range)# switchport access vlan 131
-
-
-# [Data, hora e timezone] -----------#
-
-# Verificar data/hora e timezone
-SW-ACESSO-A# show clock detail
-
-# Setar hora e data
-SW-ACESSO-A# clock set 08:21:00 18 jan 2024
-
-SW-ACESSO-A(config)# clock timezone BRA -3
-
-
--------------------------
-switchport trunk allowed vlan remove 1-4094
-
-
-

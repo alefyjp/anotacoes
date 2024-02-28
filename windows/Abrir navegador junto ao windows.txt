@@ -1,0 +1,10 @@
+# Chrome fullscreen
+--start-fullscreen
+
+# Programas na inicialização
+# Winkey + R (para abrir o executar)
+
+shell:startup
+
+
+127.0.0.1

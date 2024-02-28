@@ -119,10 +119,13 @@ SW-CORE# show ip route
 
 # [Monitoramento] -----------#
 SW-CORE# show system memory
+SW-CORE# show system cpu
+SW-CORE# show system uptime
 
-
-
-
+# logs
+SW-CORE# show log tail 20
+SW-CORE# show log severity error
+SW-CORE# show log severity warning
 
 SW-CORE# debug enable interface cfm-linktrace link-status
 SW-CORE# debug enable interface cfm-discard
