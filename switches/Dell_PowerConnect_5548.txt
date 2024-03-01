@@ -33,10 +33,6 @@ console(config)# hostname SW-ACESSO-A
 # [VLANs] -----------#
 
 # Criar uma VLAN
-SW-ACESSO-A(config)# vlan 270
-
-
-# Renomear VLAN
 SW-ACESSO-A(config)# interface vlan 270
 SW-ACESSO-A(config-if)# name P&D
 
