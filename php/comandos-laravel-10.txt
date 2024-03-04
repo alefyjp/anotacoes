@@ -1,0 +1,38 @@
+# --- [Controllers] -- #
+
+# Criar novo Controller
+php artisan make:controller UserController --resource
+
+
+
+# Criar rota para esse controller
+vim routes/web.php
+
+
+use App\Http\Controllers\TotemController;
+...
+...
+
+Route::get('/totem/index', [TotemController::class, 'index']);
+
+
+
+
+
+
+# --- [Models] -- #
+
+# --- [Views] -- #
+
+
+# --- [Rotas] -- #
+
+# Criar rota para um controller
+Route::get('/totem/index', [TotemController::class, 'index']);
+
+
+# Criar rota de redirect
+
+Route::get('/', function () {
+      return redirect('/totem');
+});
