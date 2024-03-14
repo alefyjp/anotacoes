@@ -20,3 +20,11 @@ vim /etc/apache2/sites-available/000-default.conf
    CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
+# Redirecionar 80 para 443
+vim /etc/apache2/sites-available/000-default.conf
+
+<VirtualHost *:80>
+   ServerName meusite.com.br
+   ServerAdmin webmaster@thedomain.com
+   Redirect 301 / https://supertecs.com.br
+</VirtualHost> 
