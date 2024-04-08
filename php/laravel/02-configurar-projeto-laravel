@@ -1,0 +1,92 @@
+# Passo 01 - Criar novo projeto
+
+# Criar novo projeto
+composer create-project --prefer-dist laravel/laravel meu_projeto
+
+
+# Passo 02 - Enviar projeto para Apache2
+mv poc2024 /var/www/html
+sudo chgrp -R www-data /var/www/html/poc2024/
+sudo chmod -R 775 /var/www/html/poc2024/storage/
+
+
+
+# Passo 03 - Configurar projeto Laravel no apache
+
+vim /etc/apache2\sistes-avaliables
+
+
+<VirtualHost *:80>
+   ServerName 177.71.144.227
+   ServerAdmin webmaster@thedomain.com
+   DocumentRoot /var/www/html/poc2024/public
+
+   <Directory /var/www/html/poc2024>
+       AllowOverride All
+   </Directory>
+   ErrorLog ${APACHE_LOG_DIR}/error.log
+   CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+
+
+
+
+
+
+Save the file and close it.
+
+After that, disable the default configuration file of the virtual hosts in Apache with this command:
+
+sudo a2dissite 000-default.conf
+Afterwards, enable the new virtual host:
+
+sudo a2ensite laravel_project
+Enable the Apache rewrite module, and finally, restart the Apache service:
+
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+
+
+
+
+
+
+
+
+
+# Passo 04 - Criar usuário e banco para o projeto
+
+3. Test
+Connect to the database as root.
+
+ # mysql -u root -p -h localhost
+Create a test user.
+
+ > CREATE USER 'test_user'@'localhost' IDENTIFIED BY 'test_pass';
+Create a test database.
+
+ > CREATE DATABASE test_database;
+Grant the test user privileges on the test database.
+
+ > GRANT ALL PRIVILEGES ON test_database.* TO 'test_user'@'localhost';
+Exit the database client.
+
+ > quit
+
+
+
+
+# Passo 05 - Configurar banco no laravel
+
+cd /var/www/html/poc2024/ 
+vim .env
+
+
+
+# Passo 06 - Gerar chave e cache
+
+php artisan key:generate && php artisan config:cache
+
+
