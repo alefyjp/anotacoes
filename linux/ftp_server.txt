@@ -31,3 +31,8 @@ usermod -s /sbin/nologin testuser
 
 # Para permitir que usuários com shell /usr/sbin/nologinacessem FTP, mas não tenham acesso ao shell,
 edite /etc/shellsa adição do shell nologin :
+
+# Criar um novo usuário para FTP
+adduser
+usuário: meuusuario
+senha: minhasenha
