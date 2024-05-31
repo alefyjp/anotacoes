@@ -97,13 +97,11 @@ curl --head yourdomain.com
 # nmap com tls
 nmap --script ssl-enum-ciphers -p 443 dominio.com.br
 
+# Testar TLS (Mais eficaz)
+openssl s_client -connect localhost:443
+
 # nmap headers
 nmap -p 80 --script http-security-headers 127.0.0.1 #(Vai retornar apenas os cabeçhalhos presentes, configurados)
 
 # nmap scanner completo
 nmap -T4 -A dominio.com.br
-
-# Testar TLS
-openssl s_client -connect localhost:443
-
-
