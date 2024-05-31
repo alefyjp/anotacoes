@@ -103,6 +103,7 @@ nmap -p 80 --script http-security-headers 127.0.0.1 #(Vai retornar apenas os cab
 # nmap scanner completo
 nmap -T4 -A dominio.com.br
 
-
+# Testar TLS
+openssl s_client -connect localhost:443
 
 
