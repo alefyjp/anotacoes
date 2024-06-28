@@ -1,0 +1,8 @@
+# Instalacao g++
+apt install g++
+
+# Compilar programa
+g++ olamundo.cpp -o olamundo
+
+# Rodar programa
+./olamundo
