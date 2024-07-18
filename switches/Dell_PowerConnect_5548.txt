@@ -79,7 +79,7 @@ SW-ACESSO-A(config)# clock timezone BRA -3
 
 
 
-# [VLAN de gerencia]
+# -- VLAN de gerencia -- # 
 
 # Criar vlan
 SW-ACESSO-A(config)# interface vlan 206
@@ -90,6 +90,37 @@ SW-ACESSO-A(config-if)# ip address 10.1.6.3 255.255.255.0
 
 # [Rota padrao do switch]
 SW-ACESSO-A(config)# ip route 0.0.0.0 0.0.0.0 10.1.6.1
+
+
+
+
+
+# -- SSH --- #  
+# Para ativar o SSH, digite os seguintes comandos:
+console>enable
+console#config
+console(config)#crypto key generate rsa
+(config)#ip ssh server
+
+# Para desativar o telnet, digite:  console(config)# ip telnet server disable
+# Para ativar o HTTPS, digite os seguintes comandos"
+console(config)# crypto certificate 1 generate
+console(config-crypto-cert)#key-generate
+console(config-crypto-cert)#exit
+console(config)# ip http secure-server
+
+#Para desativar o HTTP, digite: console(config)# no ip http server
+# Depois de verificar a conectividade via SSH ou HTTPS, salve a configuração, digitando: 
+console# copy running-config startup-config
+
+
+
+
+
+
+
+
+
 
 
 # [Stack] -----------#
