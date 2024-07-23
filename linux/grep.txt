@@ -1,0 +1,16 @@
+# ===============================================================================================
+# Autor: Alefy Gonzaga
+# Sistema: Base unix (Debian, Redhat e Freebsd)
+# Data: 19/09/2024
+# ===============================================================================================
+
+# Procurando uma string em um arquivo
+grep -e "Server" zabbix_agent.conf
+grep -e "Server\|server" zabbix_agent.conf
+grep -i "Server" zabbix_agent.conf
+
+
+# Encontrar linhas que não contêm uma palavra específica
+grep -v "palavra" arquivo.txt
+
+
