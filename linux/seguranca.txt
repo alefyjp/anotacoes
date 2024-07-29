@@ -1,14 +1,24 @@
 # ==========================================================================================
-# Nmap
-# ==========================================================================================
+# Titulo: Seguranca
 # Sistema: Debian e Ubuntu
 # Atualizacao: 13/09/23
 # Autor: Alefy Gonzaga
+# ==========================================================================================
 
-# ===== Instalacao ===== #
+# == openssl == #
+
+# Verificar TLS
+openssl s_client -connect meusite.com.br:443 -tls1_3
+
+# Verificar Certificados
+openssl s_client -connect ip_aqui ou dominio:443 -showcerts
+
+# ===== NMAP ===== #
+
+# Instalacao 
 apt install nmap -y
 
-# nmap com tls
+# nmap com TLS
 nmap --script ssl-enum-ciphers -p 443 dominio.com.br
 
 # nmap scanner completo

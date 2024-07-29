@@ -8,7 +8,7 @@
 	Header set X-XSS-Protection "1; mode=block"
 
 	# HSTS / Strict-Transport-Security
-	Header always set Strict-Transport-Security "max-age=63072000;
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubdomains;"
 
 	# X-Frame-Options
 	Header set X-Frame-Options: "SAMEORIGIN"
