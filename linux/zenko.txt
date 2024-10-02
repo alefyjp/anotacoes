@@ -1,0 +1,31 @@
+### Instalação zenko - ubuntu 22.04
+
+# -- Removendo 
+apt-get purge nodejs &&\
+rm -r /etc/apt/sources.list.d/nodesource.list
+
+
+# -- Dependencias -- #
+apt install build-essential -y
+
+#node
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+
+# Yarn
+sudo apt install curl
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+apt update
+sudo apt install yarn
+
+# -- zenko --#
+git clone https://github.com/scality/cloudserver.git
+cd cloudserver
+
+yarn install
+
+# Iniciar zenko
+yarn start
+

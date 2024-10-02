@@ -1,0 +1,61 @@
+# ==================================================================================
+# Gerar CSR
+# Autor: Alefy Gonzaga
+# Data: 22/11/23
+# Alvo: Ubuntu, Debian, CentOS e Redhat
+# ==================================================================================
+
+# Definições
+.csr = solicitação de assinatura de certificado (CSR) 
+.key = Chave privada 
+.ctr = Certificado (chave publica)
+
+# Fluxo
+1 - Criar chave privada(.key) -> Gerar a solicitação de certificado(.csr)
+
+2 - Enviar o .csr para a unidade certificadora -> Instalar o .ctr recebido no servidor web
+
+
+# Gerar chave RSA
+openssl genrsa -out lab.com.br.key 2048
+
+# Gerar CSR
+openssl req -new -sha256 -key lab.com.br.key -out lab.com.br.csr
+
+# Exemplo de preenchimento:
+
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:BR
+State or Province Name (full name) [Some-State]:Minas Gerais
+Locality Name (eg, city) []:Belo Horizonte
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Lab Eletronicos LTDA
+Organizational Unit Name (eg, section) []:TI
+Common Name (e.g. server FQDN or YOUR name) []:lab.com.br
+Email Address []:
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+
+# Instalação do .CSR no servidor
+
+Você pode instalar o arquivo de chave server.keye o arquivo de certificado server.crt, ou o arquivo de certificado emitido pela sua CA, executando os seguintes comandos em um prompt do terminal:
+
+sudo cp lab.com.br.crt /etc/ssl/certs
+sudo cp lab.com.br.key /etc/ssl/private
+
+# OBS
+Caso você receba múltiplos CRT’s, é recomendado que se faça a junção dos .crt’s criando um arquivo geralmente nomeado como intermediate.crt. Nota-se, no entanto, que  exemplo.com.crt não é adicionado neste novo arquivo, apenas a(s) assinatura(s) do CA. Isso pode ser feito pela linha de comando com facilidade:
+
+cat ca_exemplo1.crt ca_exemplo2.crt ca_exemplo3.crt > intermediate.crt
+
+
+# Ajuda
+https://www.organicadigital.com/blog/configurando-ssl-com-nginx/

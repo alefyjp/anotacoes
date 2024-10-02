@@ -1,0 +1,62 @@
+#=======================================================================================
+# WSL
+#=======================================================================================
+
+# --- Instalacao --- #
+
+# Instalar WSL via Poweshell
+wsl --install
+
+
+
+#Listar todas as imagens WSL disponiveis
+wsl --list --online
+
+# Criar nova máquina
+wsl --install -d ubuntu
+
+# --- Como ativar o systemd? --- #
+
+# Atualizar versão do WSL
+wsl --update
+
+# Habilitar o systemd dentro da vm WSL
+vim /etc/wsl.conf
+
+# Adicione o código a seguir
+
+[boot]
+systemd=true
+
+
+# Desligue a máquina 
+wsl --shutdown
+
+# Ligue a máquina e, verifique o funcionamento do systemd
+systemctl list-unit-files --type=service
+
+
+# --- Outros comandos --- #
+
+# Desligar todas as distros 
+wsl --shutdown
+
+# Executar um distribuição específica
+
+wsl -d Debian
+wsl -d Ubuntu
+
+wsl    --set-default, -s <Distro>
+        Define a distribuição como padrão.
+
+wsl    --set-version <Distro> <Versão>
+
+# Exibir todas as distros disponíveis para instalação
+wsl --list --online
+
+
+# Desligar distro
+wsl -t debina
+
+# Excluir distro 
+wsl --unregister debian

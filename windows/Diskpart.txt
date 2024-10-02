@@ -1,0 +1,23 @@
+# ===============================================================================
+# Diskpart
+# Autor: Alefy
+# Sistema alvo: Windows
+# ===============================================================================
+
+# Listar todos os HDs
+list disk
+
+# Selecionar o HD para sua manipulação
+select disk 1
+
+# Listar as partições do HD selecionado
+list partition
+
+# Selecionar uma partição do HD atual
+select partition 1
+
+# Formatar a partição selecionada
+format partition
+
+# Remover a partitção selecionada
+delete partition override

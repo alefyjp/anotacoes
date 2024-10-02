@@ -1,0 +1,136 @@
+# =====================================================================#
+# Modelo: DATACOM - DM4050
+# Autor: Alefy Gonzaga
+# Sistemas: DmOS
+# =====================================================================#
+
+# [Anotações]-----------# 
+
+console(#) --- Em modo administrador
+console(config) --- Em modo de configuração
+
+# [Operações básicas]-----------# 
+
+# Entrar no modo administrador 
+
+console > enable
+
+
+# Entrar no modo de configuração 
+
+console > enable
+console# config
+
+# Reset para confs de fabrica
+load factory-config 
+SW-CORE(config)# commit
+
+# Alterar hostname 
+
+console(config)# hostname SW-CORE
+SW-CORE(config)# commit
+
+# [VLANs] -----------#
+
+# Criar uma VLAN
+SW-CORE(config)# dot1q vlan 270
+SW-CORE(config-vlan-270)# name P&D
+SW-CORE(config)# commit
+
+# [Interface - VLANs] -----------#
+
+# adicionar interface na VLAN (tagged)
+
+SW-CORE(config)# dot1q vlan 131
+SW-CORE(config-vlan-131)# interface ten-gigabit-ethernet-1/1/1 tagged
+SW-CORE(config-vlan-131)# commit
+
+# adicionar interface na VLAN (untagged)
+
+SW-CORE(config)# dot1q vlan 21
+SW-CORE(config-vlan-21)# interface ten-gigabit-ethernet-1/1/1 untagged
+SW-CORE(config-vlan-21)# commit
+
+
+SW-CORE(config)# switchport interface gigabit-ethernet-1/1/1 native-vlan vlan-id 21
+SW-CORE(config)# commit
+
+
+
+# Remover interface da VLAN
+SW-CORE(config)# dot1q vlan 131
+SW-CORE(config-vlan-131)# no interface ten-gigabit-ethernet-1/1/1
+SW-CORE(config-vlan-258)# commit
+
+# Descição da interface
+SW-CORE(config-ten-gigabit-ethernet-1/1/1)# description DOWNLINK-ACESSO-A
+SW-CORE(config-ten-gigabit-ethernet-1/1/1)# commit
+
+
+# [Interface/Vlans - IPs] -----------#
+
+# IP na vlan com firewall (rota padrao)
+SW-CORE(config)# interface l3 v258
+SW-CORE(config-l3-enlace_fw)# ipv4 address 10.1.255.130/29
+SW-CORE(config-l3-enlace_fw)# lower-layer-if vlan 258
+
+# IP na vlan131
+SW-CORE(config)# interface l3 v131
+SW-CORE(config-l3-v131)# ipv4 address 10.1.131.1/24
+SW-CORE(config-l3-v131)# lower-layer-if vlan 131
+
+SW-CORE(config-l3-v131)# no ipv4 address (remover ip)
+
+
+# [Rotas] -----------#
+SW-CORE(config)# router static
+SW-CORE(config-static)# address-family ipv4
+SW-CORE(config-static-ipv4)# 0.0.0.0/0 next-hop 10.1.255.129
+
+
+
+
+# [DHCP Relay] -----------#
+
+SW-CORE(config)# dhcp relay v131
+SW-CORE(config-relay-v131)# server ipv4 10.1.128.10
+SW-CORE(config-relay-v131)# interface l3-v131
+
+
+# [Arquivos] -----------#
+file list
+file show file-name
+file delete file-name 
+
+
+# [Data, hora e timezone] -----------#
+
+# Setar hora e data
+SW-CORE# set system clock
+
+# Setar timezone
+SW-CORE(config)# clock timezone BRA -3
+
+
+
+
+SW-CORE# show ip route
+
+
+# [Monitoramento] -----------#
+SW-CORE# show system memory
+SW-CORE# show system cpu
+SW-CORE# show system uptime
+
+# logs
+SW-CORE# show log tail 20
+SW-CORE# show log severity error
+SW-CORE# show log severity warning
+
+SW-CORE# debug enable interface cfm-linktrace link-status
+SW-CORE# debug enable interface cfm-discard
+
+# [Rollback e Outros] -----------#
+SW-CORE(config)# save producao
+SW-CORE(config)# load override producao
+

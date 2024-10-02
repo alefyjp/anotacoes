@@ -1,0 +1,13 @@
+
+# Atualizar repositorios de pacotes
+ apt update
+
+# Atualizar todo o sistema, de maneira segura
+ apt upgrade
+
+do-release
+
+# Atualizar todo o sistema, removendo e instalando pacotes automaticamente (arriscado)
+dist-upgrade
+
+

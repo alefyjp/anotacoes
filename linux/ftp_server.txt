@@ -1,0 +1,38 @@
+# =======================================================================================================
+# Título: vsftpd
+# Autor: Alefy Gonzaga
+# Atualizacao: 09/04/2024
+# SO: Ubuntu
+# =======================================================================================================
+# Instalacao
+sudo apt install vsftpd
+
+# Obs: Diretorio padrao /srv/ftp
+
+# Configuração de FTP autenticado pelo usuário
+# Por padrão, o vsftpd é configurado para autenticar usuários do sistema e permitir que eles baixem
+# arquivos. Se você deseja que os usuários possam fazer upload de arquivos, edite /etc/vsftpd.conf:
+
+write_enable=YES
+
+# Agora reinicie o vsftpd:
+
+sudo systemctl restart vsftpd.service
+
+# Protegendo FTP
+# Existem opções /etc/vsftpd.confpara ajudar a tornar o vsftpd mais seguro. Por exemplo, os usuários
+# podem ficar limitados aos seus diretórios pessoais removendo os comentários:
+
+chroot_local_user=YES
+allow_writeable_chroot=YES
+
+# Remover usuario FTP do SSH
+usermod -s /sbin/nologin testuser
+
+# Para permitir que usuários com shell /usr/sbin/nologinacessem FTP, mas não tenham acesso ao shell,
+edite /etc/shellsa adição do shell nologin :
+
+# Criar um novo usuário para FTP
+adduser
+usuário: meuusuario
+senha: minhasenha

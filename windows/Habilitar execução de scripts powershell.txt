@@ -1,0 +1,7 @@
+
+# Passo 01 - Executar o console do Windows PowerShell como administrador
+
+# Passo 02 - Habilitar a execução de scripts (De Restructed para Unrestricted)
+Set-ExecutionPolicy Unrestricted
+
+# Passo 03 - Digitar 'S' para confirmar

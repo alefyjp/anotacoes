@@ -1,0 +1,42 @@
+Configurando WiFi Ubuntu Server 14.04 LTS
+
+Verificar se o driver da rede wi-fi foi reconhecido e está ok
+$ iwconfig
+
+$ sudo iwlist scan
+
+Verifique se o wpa-supplicant está instalado, caso não:
+$ sudo apt-get install wpasupplicant
+
+Converter seu WPA ASCII para hex:
+$ wpa_passphrase <ssid> <senha>
+
+**Usando dhcp e WPA editados no /etc/network/interfaces:**
+#The wireless interface
+auto wlan0
+iface wlan0 inet dhcp
+wpa-ssid <SSID of your router>
+wpa-ap-scan 1
+wpa-key-mgmt WPA-PSK
+wpa-psk <minha senha>
+
+**Usando ip estático e WPA editados no /etc/network/interfaces:**
+auto wlan0
+iface wlan0 inet static
+address 192.168.168.40
+netmask 255.255.255.0
+gateway 192.168.168.230
+dns-nameservers 192.168.168.230
+wpa-driver wext
+wpa-ssid <ssid>
+wpa-ap-scan 2
+wpa-key-mgmt WPA-PSK
+wpa-psk <minha senha>
+
+*note que wlan0 é o nome de interface wi-fi reconhecido no ubuntu
+
+Reiniciando a rede
+$ sudo /etc/init.d/networking restart
+
+revogar permissão de leitura para outros no arquivo /etc/network/interfaces
+$ sudo chmod 0=-r /etc/network/interfaces

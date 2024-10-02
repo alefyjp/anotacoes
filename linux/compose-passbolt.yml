@@ -1,0 +1,27 @@
+services:
+  app:
+    image: passbolt/passbolt:latest
+    environment:
+      - APP_FULL_BASE_URL=http://localhost:8080
+      - DB_HOST=db
+      - DB_USERNAME=passbolt
+      - DB_PASSWORD=Mudar123
+      - DB_DATABASE=passbolt
+      - APP_EMAIL=noreply@yourdomain.com
+      - APP_NAME=YourPassboltApp
+    ports:
+      - "8080:80"
+    volumes:
+      - passbolt_data:/var/www/passbolt
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=Mudar123
+      - MYSQL_DATABASE=passbolt
+      - MYSQL_USER=passbolt
+      - MYSQL_PASSWORD=Mudar123
+    volumes:
+      - /opt/docker/passbolt/:/var/lib/mysql

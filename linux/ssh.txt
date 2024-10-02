@@ -1,0 +1,13 @@
+#================================================================================
+# Titulo: SSH
+# Autor: Alefy Gonzaga
+#================================================================================
+
+
+# --- Chave --- #
+
+# Passo 1 — Criando o par de chaves
+ssh-keygen
+
+# Copiando sua chave pública usando o
+ssh-copy-id username@remote_host

@@ -1,0 +1,11 @@
+# ===============================================================
+# Verificando qualidade do Wi-Fi com Wavemon
+# ===============================================================
+
+sudo apt-get update
+
+# Instalação da ferramenta 
+sudo apt-get install wavemon
+
+# Verificar nivel do Wi-Fi
+wavemon

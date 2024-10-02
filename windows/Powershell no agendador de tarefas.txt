@@ -1,0 +1,5 @@
+Ação
+powershell
+
+Adicione argumentos (opcional)
+-File C:\Visual\copia-backup-nas.ps1

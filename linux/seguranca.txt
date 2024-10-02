@@ -1,0 +1,31 @@
+# ==========================================================================================
+# Titulo: Seguranca
+# Sistema: Debian e Ubuntu
+# Atualizacao: 13/09/23
+# Autor: Alefy Gonzaga
+# ==========================================================================================
+
+# == openssl == #
+
+# Verificar TLS
+openssl s_client -connect meusite.com.br:443 -tls1_3
+
+# Verificar Certificados
+openssl s_client -connect ip_aqui ou dominio:443 -showcerts
+
+# ===== NMAP ===== #
+
+# Instalacao 
+apt install nmap -y
+
+# nmap com TLS
+nmap --script ssl-enum-ciphers -p 443 dominio.com.br
+
+# nmap scanner completo
+nmap -T4 -A dominio.com.br
+
+# nmap headers
+nmap -p 80 --script http-security-headers 127.0.0.1 (Vai retornar apenas os cabeçhalhos presentes, configurados)
+
+nmap -p 443 --script http-security-headers 200.12.123.12 (Vai retornar apenas os cabeçhalhos presentes, configurados)
+

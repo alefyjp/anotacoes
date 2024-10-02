@@ -1,0 +1,151 @@
+# =====================================================================#
+# Modelo: Dell - PoserConnect 5548
+# Autor: Alefy Gonzaga
+# =====================================================================#
+
+# [Anotações]-----------# 
+
+console(#) --- Em modo administrador
+console(config) --- Em modo de configuração
+
+# [Operações básicas]-----------# 
+
+# Entrar no modo administrador 
+
+console > enable
+
+# Resetar para configurações de fabrica 
+console(#) delete startup-config
+console(#) reload
+
+# Entrar no modo de configuração 
+
+console > enable
+console# config
+
+# Salvar alterações 
+copy running-config startup-config
+
+# Alterar hostname 
+console(config)# hostname SW-ACESSO-A
+
+
+# [VLANs] -----------#
+
+# Criar uma VLAN
+SW-ACESSO-A(config)# interface vlan 270
+SW-ACESSO-A(config-if)# name P&D
+
+# [Interface - VLANs] -----------#
+
+# Habilitar interface como trunk
+
+SW-ACESSO-A(config)# interface tengigabitethernet 1/0/1
+
+SW-ACESSO-A(config-if)# no shut
+
+SW-ACESSO-A(config-if)# description SW-CORE-UPLINK
+
+SW-ACESSO-A(config-if)# switchport mode trunk
+
+SW-ACESSO-A(config-if)# switchport trunk allowed vlan add 131
+
+-------------------------
+switchport trunk allowed vlan remove 1-4094
+
+# Verificar as configurações de uma interface
+SW-ACESSO-A(config-if)# show interfaces switchport tengigabitethernet 1/0/1
+
+
+# Adicionar varias interfaces em uma vlan
+SW-ACESSO-A(config)# interface range gigabitethernet1/0/1 - 30
+
+no shut
+
+SW-ACESSO-A(config-if-range)# switchport mode access
+SW-ACESSO-A(config-if-range)# switchport access vlan 131
+
+
+# [Data, hora e timezone] -----------#
+
+# Verificar data/hora e timezone
+SW-ACESSO-A# show clock detail
+
+# Setar hora e data
+SW-ACESSO-A# clock set 08:21:00 18 jan 2024
+
+SW-ACESSO-A(config)# clock timezone BRA -3
+
+
+
+
+# -- VLAN de gerencia -- # 
+
+# Criar vlan
+SW-ACESSO-A(config)# interface vlan 206
+
+SW-ACESSO-A(config-if)# name GERENCIA
+SW-ACESSO-A(config-if)# ip address 10.1.6.3 255.255.255.0
+
+
+# [Rota padrao do switch]
+SW-ACESSO-A(config)# ip route 0.0.0.0 0.0.0.0 10.1.6.1
+
+
+
+
+
+# -- SSH --- #  
+# Para ativar o SSH, digite os seguintes comandos:
+console>enable
+console#config
+console(config)#crypto key generate rsa
+(config)#ip ssh server
+
+# Para desativar o telnet, digite:  console(config)# ip telnet server disable
+# Para ativar o HTTPS, digite os seguintes comandos"
+console(config)# crypto certificate 1 generate
+console(config-crypto-cert)#key-generate
+console(config-crypto-cert)#exit
+console(config)# ip http secure-server
+
+#Para desativar o HTTP, digite: console(config)# no ip http server
+# Depois de verificar a conectividade via SSH ou HTTPS, salve a configuração, digitando: 
+console# copy running-config startup-config
+
+
+
+
+
+
+
+
+
+
+
+# [Stack] -----------#
+
+# Passo 01 - Reiniciar o switch
+console(#) reload
+
+# Passo 02 - Interromper o statup
+Pressionar Esc até aparecer o startup menu
+
+     Startup Menu
+
+[1]  Download Software
+[2]  Erase Flash File
+[3]  Password Recovery Procedure
+[4]  Set Terminal Baud-Rate
+[5]  Stack menu
+[6]  Back
+
+# Passo 03 - Selecionar o stack menu
+[5]  Stack menu
+
+# Passo 04 - Escolher a oção desejada
+
+[1]  Show unit stack id
+[2]  Set unit stack id
+[3]  Back
+ Enter your choice or press 'ESC' to exit:

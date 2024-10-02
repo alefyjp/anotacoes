@@ -1,0 +1,8 @@
+# Local
+C:\zabbix\conf
+
+# Arquivo
+zabbix_agentd.win.conf
+
+# Obs
+o zabbix agent é um serviço no windows

@@ -1,0 +1,2 @@
+1) Convidar os usuário como usuarios externos no AD
+2) Editar o grupo -> Clicar em adicionar membro

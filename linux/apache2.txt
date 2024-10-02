@@ -1,0 +1,72 @@
+# == Headers == 
+
+#--- Apache2 - Headers ---#
+
+# X-Content-Type-Options Best Practices
+Header set X-Content-Type-Options "nosniff"
+
+# X-XSS-Protection
+Header set X-XSS-Protection "1; mode=block"
+
+# HSTS / Strict-Transport-Security
+Header always set Strict-Transport-Security "max-age=63072000;
+
+# X-Frame-Options
+Header set X-Frame-Options: "SAMEORIGIN"
+
+# CSP
+Header add Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' data:  *.google.com *.googleapis.com *.senhafacil.com.br *.visual.com.br *.fonts.googleapis.com *.gstatic.com;
+
+Header set Content-Security-Policy "frame-ancestors 'self';"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------
+
+
+
+
+
+
+
+# Habilitar SSL
+vim /etc/apache2/sites-available/000-default.conf
+
+<VirtualHost *:443>
+   ServerName meusite.com.br
+   ServerAdmin webmaster@thedomain.com
+   DocumentRoot /var/www/html
+   #DocumentRoot /var/www/html/meusite/public #Projeto laravel
+
+        SSLEngine on
+        SSLCertificateFile /etc/letsencrypt/live/meusite.com.br/cert.pem
+        SSLCertificateKeyFile /etc/letsencrypt/live/meusite.com.br/privkey.pem
+        SSLCertificateChainFile /etc/letsencrypt/live/meusite.com.br/fullchain.pem
+
+   <Directory /var/www/html>
+   #<Directory /var/www/html/meusitelaravel>
+       AllowOverride All
+   </Directory>
+   ErrorLog ${APACHE_LOG_DIR}/error.log
+   CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+# Redirecionar 80 para 443
+vim /etc/apache2/sites-available/000-default.conf
+
+<VirtualHost *:80>
+   ServerName meusite.com.br
+   ServerAdmin webmaster@thedomain.com
+   Redirect 301 / https://supertecs.com.br
+</VirtualHost> 

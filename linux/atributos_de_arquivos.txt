@@ -1,0 +1,10 @@
+# Adicionar o atributo somente leitura no arquivo
+chattr +i meu_arquivo.txt
+
+# Remover o atributo somente leitura do arquivo
+chattr -i meu_arquivo.txt
+
+
+# Listar atributos do arquivo
+lsattr meu_arquivo.txt
+

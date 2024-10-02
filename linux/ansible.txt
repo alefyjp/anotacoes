@@ -1,0 +1,143 @@
+# ==============================================================================================
+# Titulo: Ansible
+# Autor: Alefy Gonzaga
+# ==============================================================================================
+
+# --- Requisitos --- #
+
+- Criar um servidor master(Máquina que vai rodar o ansible)
+- Gerar uma chave SSH para o servidor master
+- Habilitar o login do Root via SSH em todas as máquinas
+- Adicionar a chave do servidor master em todos os nodes (máquinas gerenciadas pelo ansible)
+
+
+
+# --- SSH --- #
+
+# Gerar chave SSH para o master
+ssh-keygen
+
+# Copitar a chave SSH para os nodes
+ssh-copy-id username@remote_host
+
+
+# --- Instalacao ansible --- #
+
+# Instalar somente no master
+apt install ansible -y
+
+
+# Criar diretório para organizar todos os arquivos
+cd /root/ && mkdir ansible && cd ansible
+
+# --- hosts --- # 
+
+# Criar arquivo de inventario
+mkdir inventario
+vim inventario/linux
+
+[ubuntu]
+192.168.99.1
+192.168.99.2
+192.168.99.254
+
+# Testando comunicacao
+ansible all -m ping -i inventario
+
+# --- Executar comandos (utilizando o modulo shell) --- #
+
+# Obter versao do sistema
+ansible all -m shell -a "cat /etc/os-release && echo --" -i inventario
+
+# Obter informacoes de RAM
+ansible all -m shell -a "free -h && echo --" -i inventario
+
+# --- Playbook (automatizacao de tarefas) --- #
+
+# Criar o arquivo playbook
+vim padronizacao.yml
+
+---
+- name: padronizacao - ubuntu
+  hosts: ubuntu
+  remote_user: root
+
+  tasks:
+#  - name: "Update"
+#    ansible.builtin.apt:
+#      name: "*"
+#      state: latest
+#
+  - name: "Instalar ferramentas basicas"
+    apt:
+      name: vim, htop, mtr, atop
+      state: latest
+
+  - name: "Instalar zabbix-agent"
+    apt:
+      name: zabbix-agent
+      state: latest
+
+  - name: Definir o fuso horário
+    timezone:
+      name: "America/Sao_Paulo"
+
+  - name: Instalar o pacote 'ntp'
+    apt:
+      name: ntp
+      state: present
+
+  - name: Configurar o ficheiro 'ntp.conf'
+    lineinfile:
+      path: /etc/ntp.conf
+      line: "{{ item }}"
+    with_items:
+      - "server pool.ntp.org iburst"
+    notify: Reiniciar o serviço NTP
+
+
+  - name: Configurar layout do teclado para pt-BR
+    command: localectl set-x11-keymap br pc105 abnt2
+
+  - name: Reiniciar serviço de layout do teclado
+    systemd:
+      name: systemd-localed
+      state: restarted
+
+  handlers:
+    - name: Reiniciar o serviço NTP
+      service:
+        name: ntp
+        state: restarted
+
+
+
+
+# -- fim --
+
+# testar playbook (simula as alterações, sem aplicar)
+ansible-playbook --check padronizar.yaml
+ansible-playbook -c padronizar.yaml
+
+# Executar um playbook
+ansible# ansible-playbook padronizar.yaml -i inventario
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

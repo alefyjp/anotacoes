@@ -1,0 +1,23 @@
+Grafana: 9.4.7
+Linux: Debian
+--------------------------------------------------------------------------------------------
+# Pacote de grafana
+--------------------------------------------------------------------------------------------
+sudo apt-get install -y adduser libfontconfig1
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise_9.4.7_amd64.deb
+sudo dpkg -i grafana-enterprise_9.4.7_amd64.deb
+
+
+
+# Iniciar grafana
+systemctl start grafana-server
+
+# Arquivo para configuraçoes (opc)
+/etc/grafana/grafana.ini
+
+# Dados de acesso
+Usuario: admin
+Senha: admin
+
+# Instalar plugin do zabbix para coleta dos dados (datasource)
+grafana-cli plugins install alexanderzobnin-zabbix-app
