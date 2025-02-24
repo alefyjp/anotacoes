@@ -1,0 +1,13 @@
+###################################################################################################
+# Titulo: Verificar versão do kernel
+# Autor: ALEFY Gonzaga
+# Alvo: Ubuntu e Debian
+# Contato: alefyjp@gmail.com
+###################################################################################################
+
+# O que é kernel?
+
+O kernel é o núcleo do sistema operacional, responsável por gerenciar o hardware do computador e garantir que os programas possam rodar corretamente. Ele controla recursos como memória, processador e dispositivos de entrada/saída, além de gerenciar a comunicação entre o software e o hardware.
+
+# Verificar a versão atual do Kernel
+uname -r

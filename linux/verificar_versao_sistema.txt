@@ -1,0 +1,10 @@
+###################################################################################################
+# Titulo: Verificar versão do sistema
+# Autor: ALEFY Gonzaga
+# Alvo: Ubuntu e Debian
+# Contato: alefyjp@gmail.com
+###################################################################################################
+
+# Verificar a versão atual do SO
+cat /etc/os-release
+
