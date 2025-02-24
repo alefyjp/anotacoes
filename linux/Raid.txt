@@ -1,17 +1,19 @@
 ##########################################################################################################################
 # Titulo: Raid de software
 # Autor: Alefy Gonzga
-# Alvo: Ubuntu3
+# Alvo: Ubuntu
 ##########################################################################################################################
 
-# Verificar os discos disponíveis
+# Passo 01 -  Verificar os discos disponíveis
 lsblk
 
-# Instalar o mdadm
+# Passo 02 - Instalar o mdadm
 sudo apt update
 sudo apt install mdadm
 
-# Criar RAID 1 (Espelhamento)
+# Passo 03 - Como criar RAID
+
+# RAID 1 (Espelhamento)
 sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sda /dev/sdb
 
 #/dev/md0: é o dispositivo RAID que você está criando.
@@ -19,30 +21,30 @@ sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sda /dev/sdb
 # --raid-devices=2: o número de discos no array (2 discos neste exemplo).
 
 
-# Criar RAID 0 (Striping)
+# RAID 0 (Striping)
 sudo mdadm --create /dev/md0 --level=0 --raid-devices=2 /dev/sda /dev/sdb
 
-# Monitorar o progresso da criação
+# Passo 04 - Monitorar o progresso da criação
 # Quando você cria um RAID, o processo pode demorar um pouco, dependendo do tamanho dos discos e do tipo de RAID. Para monitorar o progresso da criação, use o comando:
 
 watch cat /proc/mdstat
 
-# Criar um sistema de arquivos no RAID
+# Passo 05 - Criar um sistema de arquivos no RAID
 # Depois que o RAID for criado, você precisa criar um sistema de arquivos nele, como ext4, para poder usá-lo. Use o seguinte comando para criar um sistema de arquivos ext4 no # dispositivo RAID:
 
 sudo mkfs.ext4 /dev/md0
 
-# Montar o RAID
+# Passo 06 - Como montar o RAID
 # Agora, você pode montar o array RAID em um diretório. Por exemplo, para montar em /mnt/raid, execute:
 
 sudo mkdir /mnt/raid
 sudo mount /dev/md0 /mnt/raid
 
-# Para verificar se o RAID foi montado corretamente, use o comando:
+# Passo 07 - Para verificar se o RAID foi montado corretamente, use o comando:
 
 df -h
 
-# Configurar a montagem automática (opcional)
+# Passo 07 - Configurar a montagem automática (opcional)
 # Se você deseja que o RAID seja montado automaticamente após a reinicialização, você precisará adicionar o RAID ao arquivo /etc/fstab. Para isso, edite o arquivo com um # editor de texto, como o nano:
 
 sudo nano /etc/fstab
@@ -51,7 +53,7 @@ Adicione a seguinte linha ao final do arquivo:
 /dev/md0    /mnt/raid    ext4    defaults    0    0
 
 
-8. Verificar o array RAID
+Passo 08 - Verificar o array RAID
 Após a configuração do RAID, você pode verificar o status do seu array usando:
 
 sudo mdadm --detail /dev/md0
