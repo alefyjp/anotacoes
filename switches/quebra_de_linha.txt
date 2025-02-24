@@ -1,6 +1,0 @@
-Esta e a linha 1 \ 
-Continuacao da linha 1 
-
-Esta e a linha 2 \
-Continuacao da linha 2
-

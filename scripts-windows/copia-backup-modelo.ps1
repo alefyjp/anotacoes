@@ -52,7 +52,7 @@ for($i = 0; $i -lt $pastas.Count; $i++) # LT Menor que
 # Obtendo a lista de todos os backups
 $lista = @(dir -n $destino) # O @ est  transformando o retorno em um array
 
-# Verificando se h  mais do 5 pastas deste backup
+# Verificando se ha  mais do 5 pastas deste backup
 if ($lista.Length -gt 5) # GreaterThan - Maior que
 {   
     $utimos = ($lista.Length - 1) - 5 # Preservando as ultimas 5 pastas de backups
