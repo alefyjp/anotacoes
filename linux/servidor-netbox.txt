@@ -1,0 +1,160 @@
+# ===================================================================================================
+# Titulo: Instalação Netbox
+# Autor: Alefy
+# Alvo: Ubuntu 24
+# ===================================================================================================
+
+-- PostgreSQL --
+# 01 - Instalação do banco de dados PostgreSQL
+sudo apt update
+sudo apt install postgresql postgresql-contrib y
+
+
+# Antes de continuar, verifique se você instalou o PostgreSQL 12 ou posterior:
+psql -V
+
+# Acessar o PostgreSQL
+# O PostgreSQL cria automaticamente um usuário chamado postgres. Para acessar o shell do PostgreSQL, você pode mudar para esse usuário:
+
+sudo -i -u postgres
+
+# E então entrar no prompt do PostgreSQL:
+
+psql
+
+
+# Criação de banco de dados
+# Dentro do shell, digite os seguintes comandos para criar o banco de dados e o usuário (função), substituindo seu próprio valor pela senha:
+
+CREATE DATABASE netbox;
+CREATE USER netbox WITH PASSWORD 'J5brHrAXFLQSif0K';
+ALTER DATABASE netbox OWNER TO netbox;
+#Obs: the next two commands are needed on PostgreSQL 15 and later
+\connect netbox;
+GRANT CREATE ON SCHEMA public TO netbox;
+\q
+
+-- Python --
+
+# Verificar se o python 3 esta instalado
+ python3 -V
+
+-- redis-server --
+# Instalação banco de dados redis
+sudo apt install -y redis-server
+
+# Verificar instalação
+redis-server -v
+redis-cli ping
+
+-- Netbox --
+# Instalação das dependências
+sudo apt install -y python3 python3-pip python3-venv python3-dev build-essential libxml2-dev libxslt1-dev libffi-dev libpq-dev libssl-dev zlib1g-dev git
+
+# Clonar o repositório Git
+sudo mkdir -p /opt/netbox/
+cd /opt/netbox/
+
+sudo git clone -b master --depth 1 https://github.com/netbox-community/netbox.git .
+
+## Obs: A instalação via git também permite que você experimente facilmente diferentes versões do NetBox. 
+# Para verificar uma versão específica do NetBox , use o git checkoutcomando com a tag de versão desejada. Por exemplo, git checkout v3.0.8.
+
+# Crie o usuário do sistema NetBox
+sudo adduser --system --group netbox
+sudo chown --recursive netbox /opt/netbox/netbox/media/
+sudo chown --recursive netbox /opt/netbox/netbox/reports/
+sudo chown --recursive netbox /opt/netbox/netbox/scripts/
+
+-- Netbox Configuração --
+# Configuração
+# Vá para o diretório de configuração do NetBox e faça uma cópia do arquivo configuration_example.pynamed configuration.py. 
+# Este arquivo conterá todos os seus parâmetros de configuração local.
+cd /opt/netbox/netbox/netbox/ && sudo cp configuration_example.py configuration.py
+
+# Abra configuration.pycom seu editor preferido para começar a configurar o NetBox. O NetBox oferece muitos parâmetros de configuração , 
+# mas somente os quatro seguintes são necessários para novas instalações:
+
+# ALLOWED_HOSTS
+ALLOWED_HOSTS = ['*']
+
+# DATABASE
+DATABASE = {
+    'NAME': 'netbox',               # Database name
+    'USER': 'netbox',               # PostgreSQL username
+    'PASSWORD': 'J5brHrAXFLQSif0K', # PostgreSQL password
+    'HOST': 'localhost',            # Database server
+    'PORT': '',                     # Database port (leave blank for default)
+    'CONN_MAX_AGE': 300,            # Max database connection age (seconds)
+}
+
+# REDIS
+REDIS = {
+    'tasks': {
+        'HOST': 'localhost',      # Redis server
+        'PORT': 6379,             # Redis port
+        'PASSWORD': '',           # Redis password (optional)
+        'DATABASE': 0,            # Database ID
+        'SSL': False,             # Use SSL (optional)
+    },
+    'caching': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'PASSWORD': '',
+        'DATABASE': 1,            # Unique ID for second database
+        'SSL': False,
+    }
+}
+
+# CHAVE_SEGREDA
+secret_key
+
+# Este parâmetro deve receber uma chave gerada aleatoriamente, empregada como um salt para hashing e funções criptográficas relacionadas. (Observe, no entanto, que ela nunca é usada diretamente na criptografia de dados secretos.) 
+# Esta # # chave deve ser exclusiva para esta instalação e é recomendado que tenha pelo menos 50 caracteres. Ela não deve ser compartilhada fora do sistema local.
+# Um script Python simples chamado generate_secret_key.pyé fornecido no diretório pai para auxiliar na geração de uma chave adequada:
+
+python3 ../generate_secret_key.py
+
+# Execute o script de atualização
+sudo /opt/netbox/upgrade.sh
+
+# Criar um superusuário
+O NetBox não vem com nenhuma conta de usuário predefinida. Você precisará criar um superusuário (conta administrativa) para poder fazer login no NetBox. Primeiro, entre no ambiente virtual Python criado pelo script de atualização:
+
+source /opt/netbox/venv/bin/activate
+
+# Depois que o ambiente virtual for ativado, você deverá notar a string (venv)anexada ao prompt do console.
+
+# Em seguida, criaremos uma conta de superusuário usando o createsuperusercomando de gerenciamento do Django (via manage.py). Não é necessário especificar um endereço de e-mail para o usuário, mas certifique-se de usar uma senha muito  # forte.
+
+cd /opt/netbox/netbox
+python3 manage.py createsuperuser
+
+# Agende a tarefa de limpeza
+#O NetBox inclui um housekeepingcomando de gerenciamento que lida com algumas tarefas de limpeza recorrentes, como limpar sessões antigas e registros de alterações expirados. Embora esse comando possa ser executado manualmente, é recomendável configurar um trabalho agendado usando o crondaemon do sistema ou um utilitário semelhante.
+
+Um script de shell que invoca esse comando está incluído em contrib/netbox-housekeeping.sh. Ele pode ser copiado ou vinculado do diretório de tarefas diárias do cron do seu sistema, ou incluído diretamente no crontab. (Se estiver instalando o NetBox em um caminho não padrão, certifique-se de atualizar os caminhos do sistema dentro desse script primeiro.)
+
+-- Gunicorn e Systemd --
+sudo cp /opt/netbox/contrib/gunicorn.py /opt/netbox/gunicorn.py
+sudo cp -v /opt/netbox/contrib/*.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now netbox netbox-rq
+
+-- Servidor HTTP --
+# Obter um certificado SSL
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+-keyout /etc/ssl/private/netbox.key \
+-out /etc/ssl/certs/netbox.crt
+
+# Instalação do servidor HTTP
+sudo apt install -y nginx
+
+sudo cp /opt/netbox/contrib/nginx.conf /etc/nginx/sites-available/netbox
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/netbox /etc/nginx/sites-enabled/netbox
+
+-- Primeiro acesso --
+Url:https://ipdoservidor
+Usuário: admin
+Senha: admin
