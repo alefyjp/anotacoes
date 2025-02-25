@@ -1,0 +1,31 @@
+# Titulo: Configurações de teclado
+# Autor: Alefy Gonzaga
+# Contato: alefyjp@gmail.com	
+# Alvo: Ubuntu e Debian	
+# Atualização: 25/02/2025	                                                        
+
+
+## Opção 01  		                                                        
+#################################################################################
+
+# Usando o dpkg-reconfigure
+sudo dpkg-reconfigure keyboard-configuration
+
+# Aplicar as mudanças 
+sudo service keyboard-setup restart
+
+
+## Opção 02  		                                                        
+#################################################################################
+
+# Alterando Manualmente os Arquivos de Configuração
+sudo vim /etc/default/keyboard
+
+XKBLAYOUT="br"
+
+# Aplicar as mudanças 
+sudo service keyboard-setup restart
+
+
+#-- Mudanca provisoria --# 
+loadkeys
