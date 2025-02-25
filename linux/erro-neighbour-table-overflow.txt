@@ -1,0 +1,19 @@
+# How Do I Fix “Neighbour Table Overflow” Error?
+Edit /etc/sysctl.conf file, enter:
+# vi /etc/sysctl.conf
+
+Append the following values (this is taken from server that protects over 200 desktops running MS-Windows, Linux, and Apple OS X):
+
+ ## works best with <= 500 client computers ##
+# Force gc to clean-up quickly
+net.ipv4.neigh.default.gc_interval = 3600
+ 
+# Set ARP cache entry timeout
+net.ipv4.neigh.default.gc_stale_time = 3600
+ 
+# Setup DNS threshold for arp 
+net.ipv4.neigh.default.gc_thresh3 = 4096
+net.ipv4.neigh.default.gc_thresh2 = 2048
+net.ipv4.neigh.default.gc_thresh1 = 1024
+To load new changes type the following command:
+# sysctl -p

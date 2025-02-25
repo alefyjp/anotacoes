@@ -5,7 +5,7 @@
 # Atualização: 25/02/2025	                                                        
 
 
-## Opção 01  		                                                        
+# Opção 01  		                                                        
 #################################################################################
 
 # Usando o dpkg-reconfigure
@@ -15,7 +15,7 @@ sudo dpkg-reconfigure keyboard-configuration
 sudo service keyboard-setup restart
 
 
-## Opção 02  		                                                        
+# Opção 02  		                                                        
 #################################################################################
 
 # Alterando Manualmente os Arquivos de Configuração
@@ -27,5 +27,9 @@ XKBLAYOUT="br"
 sudo service keyboard-setup restart
 
 
-#-- Mudanca provisoria --# 
+
+# Opção 03 - Provisorio  		                                                        
+#################################################################################
+
+# Alerar as configuracoes do teclado ate o fim da secao atual
 loadkeys

@@ -1,0 +1,34 @@
+(Debian 10)
+
+# Instalação 
+apt-get install isc-dhcp-server -y
+
+# Configurar interfaces de LAN
+dpkg-reconfigure isc-dhcp-server
+ou
+vim /etc/default/isc-dhcp-server
+
+# Configurar Pool
+cd /etc/dhcp/
+mv dhcpd.conf dhcpd.conf.original
+vim dhcpd.conf
+
+
+option domain-name "mydebian";
+# Use Google public DNS server (or use faster values that your internet provider gave you!):
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+# Set up our desired subnet:
+subnet 192.168.1.0 netmask 255.255.255.0 {
+    range 192.168.1.101 192.168.1.254;
+    option subnet-mask 255.255.255.0;
+    option broadcast-address 192.168.1.255;
+    option routers 192.168.1.100;
+    option domain-name-servers home;
+}
+default-lease-time 600;
+max-lease-time 7200;
+# Show that we want to be the only DHCP server in this network:
+authoritative;
+
+# Reiniciando DHCP Server
+systemctl restart isc-dhcp-server.service
