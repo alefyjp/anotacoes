@@ -1,8 +1,0 @@
-# Arquivo 
-/etc/timezone
-
-# Listar fusoharios
-timedatectl list-timezones | grep Sao_Paulo
-
-# Modar fusohario
-timedatectl set-timezone America/Sao_Paulo 

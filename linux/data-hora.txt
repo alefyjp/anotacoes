@@ -1,0 +1,41 @@
+###################################################################################################
+# Titulo: Data e hora
+# Autor: ALEFY Gonzaga
+# Alvo: Ubuntu e Debian
+# Contato: alefyjp@gmail.com
+###################################################################################################
+
+# Verificar hora atual e demais parâmetros
+timedatectl
+
+#-- Processo manual --
+# Alterar a data e hora manualmente
+# sudo timedatectl set-time 'YYYY-MM-DD HH:MM:SS'
+sudo timedatectl set-time '2025-02-25 15:30:00'
+
+# Ver a lista de fusos horários disponíveis
+
+timedatectl list-timezones
+
+timedatectl list-timezones | grep America  # Filtrar por América
+
+# Setar manualmente o fuso horário(opcao1)
+sudo timedatectl set-timezone America/Sao_Paulo
+
+# Setar manualmente o fuso horário(opcao2)
+# Editar o arquivo /etc/timezone e adicionar o fuso horário desejado
+# Ex: 
+vim # Arquivo /etc/timezone
+America/Sao_Paulo
+
+# Para desativar o ajuste automático:
+sudo timedatectl set-ntp false
+
+
+#-- Processo automatico --
+# Ativar ou desativar o ajuste automático da hora via NTP (Network Time Protocol): Para garantir que o sistema se ajuste automaticamente à hora correta via NTP, você pode habilitar o serviço:
+
+sudo timedatectl set-ntp true
+
+# Para desativar o ajuste automático:
+sudo timedatectl set-ntp false

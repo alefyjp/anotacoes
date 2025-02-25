@@ -1,13 +1,14 @@
 
-# Atualizar repositorios de pacotes
- apt update
+# Atualizar repositórios de pacotes
+# Atualizar a lista de pacotes disponíveis e suas versões (mas não instala ou atualiza nenhum pacote)
+sudo apt update -y
 
-# Atualizar todo o sistema, de maneira segura
- apt upgrade
+# Atualizar todo o sistema
+# Atualizar os pacotes instalados em seu sistema para suas versões mais recentes (Ele não apenas baixa as atualizações, 
+mas também as aplica, garantindo que você esteja executando as versões mais recentes dos programas)
 
-do-release
+sudo apt upgrade -y
 
-# Atualizar todo o sistema, removendo e instalando pacotes automaticamente (arriscado)
-dist-upgrade
-
+# Remover pacotes que não serão mais utilizados
+apt autoremove
 
