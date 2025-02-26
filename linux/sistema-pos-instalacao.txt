@@ -20,5 +20,5 @@ sudo apt upgrade -y
 apt autoremove
 
 # Ferramentas essenciais
-apt install htop nload nmap lynx iptraf net-tools vim openssh-server openssh-client lshw -y
+apt install htop nload nmap lynx iptraf net-tools vim openssh-server openssh-client lshw mtr-tiny -y
 
