@@ -1,0 +1,15 @@
+
+# Criar uma screen
+screen -S noma-da-screen
+
+# Sair de uma screen sem encerra-la
+Ctrl+a+d
+
+# Exibir todas as screens
+screen -ls
+
+# Conectar em uma screen
+#screen -r id
+screen -r 3521
+
+
