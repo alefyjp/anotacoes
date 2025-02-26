@@ -1,43 +1,100 @@
-# ============================================================================================
-# Titulo: Estudando VIM
+# Titulo: Editor de texto VIM
 # Autor: Alefy Gonzaga
-# Ultima atualizacao: Wed Jan 31 09:01:18 -03 2024
-# ============================================================================================
-
-# --- Plugins --- #
-
-# nerdtree
-curl -sS https://webi.sh/vim-nerdtree | sh
+# Contato: alefyjp@gmail.com	
+# Alvo: Linux em geral	
+# Atualização: 26/02/2025	                                                        
 
 
-# --- [Comandos basicos] --- # 
+# Comandos basicos  		                                                        
+#################################################################################
+
+# Salvar arquivos (sem fechar)
+:w
+
+# Fechar arquivo (apos ter salvado)
+:q
 
 # Sair sem salvar
 :q!
 
-# Sair salvando
+# Sair salvando 
 :x!
 
-# --- [Pesquisar] --- # 
 
-/palavra
+# Realizar pesquisa no arquivo (simples)   		                                                        
+#################################################################################
+
+# Pesquisar por palavras que contanham a string desejada. (procurar de cima para baixo)
+#/string desejada. Ex: 
+/token
+
+# Navegar entre os resutados da pesquisa
+# Caso a palavra tenha sido encontrada, podemos navegar entre o resultado pressionando "Enter", em seguida "N" para selecionar o próximo resultado.
 
 
-# --- [Substituir] --- # 
+# Realizar pesquisa no arquivo (Com regex)   		                                                        
+#################################################################################
 
-# --- [Abrir arquivo] --- #
+# Pesquisar por palavras que contanham a string desejada. (procurar de cima para baixo)
+# Novamente vamos procurar pela string "token". A palavra começa com "t" e termina com "en" Ex: 
+/t.*en
 
-# --- [Split de janela] --- #
 
-# Novo arquivo vazio na horizontal
-Ctrl+w+n
-
-# --- [Comentar multiplas linhas] --- #
-
-# --- [Rodar comandos shell dentro do Vim] --- #
+# Executar comandos   		                                                        
+#################################################################################
 
 # Rodar comando salvado retorno no arquivo VIM atual
 :r!cat meuarquivo.txt
 
 # Rodar comando sem salvar no arquivo VIM atual
 :!cat meuarquivo.txt
+
+
+# Substituir 
+#################################################################################
+# Localizar e substituir todas as string boss do arquivo por chefe
+:%s/boss/chefe 
+
+
+# Dividir a tela
+#################################################################################
+
+# Dividir a tela na horizontal
+:split meu-arquivo.txt
+
+
+# Dividir a tela na vertical
+
+# Navegar entre as telas
+Ctrl+w
+
+# Inverter as telas
+Ctrl+w+r
+
+
+# Novo arquivo vazio na horizontal
+#################################################################################
+#
+Ctrl+w+n
+
+
+# Comentar multiplas linhas
+#################################################################################
+
+# Passo 01- Selecionar as linas que deverão ser comentadas
+Ctrl+V
+
+# Passo 02 - Entrar no modo de edição
+Shift+1
+
+# Passo 03 - Inserir o comentário 
+#
+
+Passo 04 - Sair do modo de edição
+Esc
+
+
+# --- Plugins --- #
+
+# nerdtree
+curl -sS https://webi.sh/vim-nerdtree | sh
