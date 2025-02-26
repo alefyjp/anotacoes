@@ -44,14 +44,18 @@
 #################################################################################
 
 # Rodar comando salvado retorno no arquivo VIM atual
-:r!cat meuarquivo.txt
+
+#:r!comando Ex:
+:r!ifconfig
 
 # Rodar comando sem salvar no arquivo VIM atual
-:!cat meuarquivo.txt
+#:!comando Ex:
+:!ifconfig
 
 
 # Substituir 
 #################################################################################
+
 # Localizar e substituir todas as string boss do arquivo por chefe
 :%s/boss/chefe 
 
@@ -70,12 +74,6 @@ Ctrl+w
 
 # Inverter as telas
 Ctrl+w+r
-
-
-# Novo arquivo vazio na horizontal
-#################################################################################
-#
-Ctrl+w+n
 
 
 # Comentar multiplas linhas
