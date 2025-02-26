@@ -1,0 +1,24 @@
+# Titulo: Gestão CPU
+# Autor: Alefy Gonzaga
+# Contato: alefyjp@gmail.com	
+# Alvo: Ubuntu e Debian	
+# Atualização: 26/02/2025	                                                        
+
+
+# Verificar memória instalada e disponível  		                                                        
+#################################################################################
+
+# Opção 01
+lscpu
+
+# Opção 02 (Exibe informações sobre RAM, Swap, Qtd núcleos do processador e uptime da máquina)
+htop
+
+# Opção 03
+neofetch (Exibe informações sobre Versão do sistema, Kernel, Uptime, shell, modelo da CPU e GPU, memória instalada e disponível)
+
+# Opção 04 ( Exibe informações completas sobre o hardware a nível placa mãe, como Qtd de slots e etc)
+lshw -class cpu
+
+
+
