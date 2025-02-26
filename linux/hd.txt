@@ -1,17 +1,19 @@
-#================================================================================
-# HD
-#================================================================================
-# Sistema: Debian e Ubuntu
-# Atualizacao: 15/09/23
+# Titulo: Layout de anotacoes
 # Autor: Alefy Gonzaga
+# Contato: alefyjp@gmail.com	
+# Alvo: Ubuntu e Debian	
+# Atualização: 26/02/2025	                                                        
 
-# ====== Clone ====== #
+
+# Clone		                                                        
+#################################################################################
 
 # Clonar disco
 sudo dd if=/dev/sda5 of=/media/outro-disco/clone.dd bs=512 conv=noerror,sync
 
 
-# ====== Montagem e manutencao ====== #
+# Formatação e particionamento 		                                                        
+#################################################################################
 
 # Exibir HDs e partições identificadas pelo sistema
 ls /dev/sd*
@@ -28,6 +30,10 @@ mkdir /mnt/musicas
 # Montar manualmente a partição
 mount -t ext4 /dev/sdb1 /mnt/musicas/
 
+
+# Montagem com FSTAB 		                                                        
+#################################################################################
+
 # Montar automaticamente a partição (Utilizando fstab)
 
 # Identificar uid 
@@ -40,3 +46,14 @@ vim /etc/fstab
 
 # montar HD 
 mount /mnt/musicas/
+
+
+# Montagem sem FSTAB 		                                                        
+#################################################################################
+
+# Montar unidade informando o seu ID
+sudo mount UUID=be2a0990-b60e-468d-b152-56fc8da5d2af /mnt/nas-hda
+
+# Montar unidade informando o seu nome
+sudo mount /dev/sda1 /mnt/nas-hda
+
