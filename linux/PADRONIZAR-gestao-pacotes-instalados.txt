@@ -1,0 +1,19 @@
+# atualizar um pacote instalado
+# apt install nome-do-pacote
+apt install anydesk
+
+# Exibir todos os pacotes(programas) instalados
+apt list --installed
+
+# Procurar por um pacote especifico
+apt list --installed | grep "anydesk"
+
+# Desinstalar um pacote
+# apt remove nome-do-pacote
+apt remove anydesk
+
+# Desinstalar um pacote e remover seus aquivos de configuração
+# apt purge nome-do-pacote
+apt purge anydesk
+
+
