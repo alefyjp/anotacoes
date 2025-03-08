@@ -20,5 +20,5 @@ neofetch (Exibe informações sobre Versão do sistema, Kernel, Uptime, shell, m
 # Opção 04 ( Exibe informações completas sobre o hardware a nível placa mãe, como Qtd de slots e etc)
 lshw -class cpu
 
-
-
+# Opção 04
+cat /proc/cpuinfo
