@@ -1,0 +1,14 @@
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\bin\Debug\net8.0\FibiEarth.exe
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\bin\Debug\net8.0\FibiEarth.deps.json
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\bin\Debug\net8.0\FibiEarth.runtimeconfig.json
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\bin\Debug\net8.0\FibiEarth.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\bin\Debug\net8.0\FibiEarth.pdb
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\FibiEarth.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\FibiEarth.AssemblyInfoInputs.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\FibiEarth.AssemblyInfo.cs
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\FibiEarth.csproj.CoreCompileInputs.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\FibiEarth.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\refint\FibiEarth.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\FibiEarth.pdb
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\FibiEarth.genruntimeconfig.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\Projetos\FibiEarth\obj\Debug\net8.0\ref\FibiEarth.dll

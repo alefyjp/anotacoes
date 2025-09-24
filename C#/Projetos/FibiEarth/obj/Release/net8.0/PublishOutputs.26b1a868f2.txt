@@ -1,0 +1,5 @@
+C:\Users\alefy\OneDrive\Área de Trabalho\FibiEarth.exe
+C:\Users\alefy\OneDrive\Área de Trabalho\FibiEarth.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\FibiEarth.deps.json
+C:\Users\alefy\OneDrive\Área de Trabalho\FibiEarth.runtimeconfig.json
+C:\Users\alefy\OneDrive\Área de Trabalho\FibiEarth.pdb
