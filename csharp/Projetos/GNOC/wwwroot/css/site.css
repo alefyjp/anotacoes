@@ -1,0 +1,114 @@
+html {
+  font-size: 14px;
+
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  /*background-color:black;*/
+}
+/*Menu*/
+#menu {
+    background-color: #791a24 !important;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+#menu a 
+{
+    color: white !important;
+}
+#menu a:hover 
+{
+    color: yellow !important;
+}
+#menu img 
+{
+    height:30px !important;
+}
+#user-image
+{
+    border-radius:100%;
+}
+
+#menu button
+{
+    color:white !important;
+}
+
+#menu .dropdown-menu a 
+{
+    color: black !important;
+}
+/*Buttons*/
+.btn-100 {
+    width: 100% !important;
+}
+
+/*Sections*/
+.section {
+    background-color: #e2e3e5;
+    padding: 30px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    box-shadow:1px 1px;
+}
+
+/*Tables*/
+.table 
+{
+    font-size: 14px;
+    /*box-shadow: 1px 1px;*/
+}
+
+/*Login*/
+.card-login 
+{
+    padding:50px 30px;
+    border-radius:10px;
+    background-color:#6e0404;
+    margin-bottom:20px;
+    box-shadow:2px 2px 2px;
+    color:white;
+}
+
+/*Modal*/
+
+.modal-body
+{
+    background-color: #e2e3e5 !important;
+}
+
+.priorityTag 
+{
+    padding:0px 10px;
+    border-radius:10px;
+    font-weight:bolder;
+    min-width:100px !important;
+
+}
+
+.priority-hight {
+    background-color: #791a24;
+    color: white;
+}
+.priority-normal 
+{
+    background-color: dodgerblue;
+    color:white;
+}
