@@ -12,3 +12,18 @@ C:\Users\alefy\OneDrive\Documentos\Projetos\NAS Faxinator\obj\Debug\net8.0\refin
 C:\Users\alefy\OneDrive\Documentos\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.pdb
 C:\Users\alefy\OneDrive\Documentos\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.genruntimeconfig.cache
 C:\Users\alefy\OneDrive\Documentos\Projetos\NAS Faxinator\obj\Debug\net8.0\ref\NAS Faxinator.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\bin\Debug\net8.0\NAS Faxinator.exe
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\bin\Debug\net8.0\NAS Faxinator.deps.json
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\bin\Debug\net8.0\NAS Faxinator.runtimeconfig.json
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\bin\Debug\net8.0\NAS Faxinator.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\bin\Debug\net8.0\NAS Faxinator.pdb
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.AssemblyInfoInputs.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.AssemblyInfo.cs
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.csproj.CoreCompileInputs.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.sourcelink.json
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\refint\NAS Faxinator.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.pdb
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\NAS Faxinator.genruntimeconfig.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\NAS Faxinator\obj\Debug\net8.0\ref\NAS Faxinator.dll

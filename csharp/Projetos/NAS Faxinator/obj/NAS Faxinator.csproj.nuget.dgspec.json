@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alefy\\OneDrive\\Documentos\\Projetos\\NAS Faxinator\\NAS Faxinator.csproj": {}
+    "C:\\Users\\alefy\\OneDrive\\Área de Trabalho\\anotacoes\\csharp\\Projetos\\NAS Faxinator\\NAS Faxinator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alefy\\OneDrive\\Documentos\\Projetos\\NAS Faxinator\\NAS Faxinator.csproj": {
+    "C:\\Users\\alefy\\OneDrive\\Área de Trabalho\\anotacoes\\csharp\\Projetos\\NAS Faxinator\\NAS Faxinator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alefy\\OneDrive\\Documentos\\Projetos\\NAS Faxinator\\NAS Faxinator.csproj",
+        "projectUniqueName": "C:\\Users\\alefy\\OneDrive\\Área de Trabalho\\anotacoes\\csharp\\Projetos\\NAS Faxinator\\NAS Faxinator.csproj",
         "projectName": "NAS Faxinator",
-        "projectPath": "C:\\Users\\alefy\\OneDrive\\Documentos\\Projetos\\NAS Faxinator\\NAS Faxinator.csproj",
+        "projectPath": "C:\\Users\\alefy\\OneDrive\\Área de Trabalho\\anotacoes\\csharp\\Projetos\\NAS Faxinator\\NAS Faxinator.csproj",
         "packagesPath": "C:\\Users\\alefy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alefy\\OneDrive\\Documentos\\Projetos\\NAS Faxinator\\obj\\",
+        "outputPath": "C:\\Users\\alefy\\OneDrive\\Área de Trabalho\\anotacoes\\csharp\\Projetos\\NAS Faxinator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

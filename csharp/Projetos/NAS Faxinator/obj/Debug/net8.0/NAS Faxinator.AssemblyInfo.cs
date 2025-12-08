@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NAS Faxinator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e005abd7772f2286c2823e4f001491e308bd24c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("NAS Faxinator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NAS Faxinator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,8 +2,11 @@
 using System;
 using System.IO;
 
+
 /* CONFIGURAÇÕES */
-var raizes = new List<string> { @"X:\" };
+var raizes = TXTParaLista(@"X:\raizes.txt");
+var arquivosIndesejados = TXTParaLista(@"X:\Arquivos_indesejados.txt");
+
 string banner = """
  _   _    ___    ____          __           
 | \ | |  / _ \  / ___|   __ _ / _|  __ _ ___ 
@@ -12,15 +15,6 @@ string banner = """
 |_| \_|  \___/  |____/  \__,_|_|   \__,_|___/
         NAS  F A X I N A T O R
 """;
-
-var arquivosIndesejados = new List<string>
-{
-    "Trailer.PT-BR.mp4",
-    "1XBET.COM_promo_SHREK_dinheiro_livre.mp4",
-    "BAIXAR OUTROS FILMES.url",
-    "Comando.LA.url",
-    "TorrentDosFilmes.SE.url"
-};
 
 /* FUNÇÕES */
 List<string> BuscaSubpastas(List<string> bases)
@@ -47,6 +41,8 @@ List<string> BuscaSubpastas(List<string> bases)
 
 void DeletaArquivos(List<string> nomesArquivos, List<string> pastasDestino)
 {
+    var totalRemovidos = 0;
+
     foreach (var pasta in pastasDestino)
     {
         foreach (var nomeArquivo in nomesArquivos)
@@ -59,6 +55,7 @@ void DeletaArquivos(List<string> nomesArquivos, List<string> pastasDestino)
                 {
                     File.Delete(caminho);
                     Console.WriteLine("Removido: " + caminho);
+                    totalRemovidos++;
                 }
             }
             catch (Exception ex)
@@ -67,6 +64,34 @@ void DeletaArquivos(List<string> nomesArquivos, List<string> pastasDestino)
             }
         }
     }
+
+    //RESUMO
+    Console.WriteLine(" ");
+    Console.WriteLine("TOTAL DE ARQUIVOS REMOVIDOS: ");
+    Console.WriteLine(totalRemovidos);
+}
+
+List<string>TXTParaLista(string caminhoArquivo)
+{   
+    var lista = new List<string>();
+    try
+    {
+        using( StreamReader sr = new StreamReader(caminhoArquivo)) 
+        { 
+            var linha = sr.ReadLine();
+            while (linha != null)
+            { 
+                lista.Add(linha);
+                linha = sr.ReadLine();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex);
+    }
+
+    return lista;
 }
 
 /* INICIO */

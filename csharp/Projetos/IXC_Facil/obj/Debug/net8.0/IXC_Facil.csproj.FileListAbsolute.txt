@@ -1,0 +1,29 @@
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.exe
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.deps.json
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.runtimeconfig.json
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.dll
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.pdb
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.AssemblyInfoInputs.cache
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.AssemblyInfo.cs
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.csproj.CoreCompileInputs.cache
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.dll
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\refint\IXC_Facil.dll
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.pdb
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.genruntimeconfig.cache
+C:\Users\alefy\OneDrive\Documentos\Projetos\IXC_Facil\obj\Debug\net8.0\ref\IXC_Facil.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.exe
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.deps.json
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.runtimeconfig.json
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\bin\Debug\net8.0\IXC_Facil.pdb
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.AssemblyInfoInputs.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.AssemblyInfo.cs
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.csproj.CoreCompileInputs.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.sourcelink.json
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\refint\IXC_Facil.dll
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.pdb
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\IXC_Facil.genruntimeconfig.cache
+C:\Users\alefy\OneDrive\Área de Trabalho\anotacoes\csharp\Projetos\IXC_Facil\obj\Debug\net8.0\ref\IXC_Facil.dll
