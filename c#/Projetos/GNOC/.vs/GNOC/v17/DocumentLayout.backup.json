@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|c:\\users\\alefy\\onedrive\\\u00E1rea de trabalho\\anotacoes\\csharp\\projetos\\gnoc\\views\\dutys\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|solutionrelative:views\\dutys\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|c:\\users\\alefy\\onedrive\\\u00E1rea de trabalho\\anotacoes\\csharp\\projetos\\gnoc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|c:\\users\\alefy\\onedrive\\\u00E1rea de trabalho\\anotacoes\\csharp\\projetos\\gnoc\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|c:\\users\\alefy\\onedrive\\\u00E1rea de trabalho\\anotacoes\\csharp\\projetos\\gnoc\\wwwroot\\js\\tasks.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|solutionrelative:wwwroot\\js\\tasks.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|c:\\users\\alefy\\onedrive\\\u00E1rea de trabalho\\anotacoes\\csharp\\projetos\\gnoc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|c:\\users\\alefy\\onedrive\\\u00E1rea de trabalho\\anotacoes\\csharp\\projetos\\gnoc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|c:\\users\\alefy\\onedrive\\\u00E1rea de trabalho\\anotacoes\\csharp\\projetos\\gnoc\\views\\tasks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|solutionrelative:views\\tasks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|c:\\users\\alefy\\onedrive\\\u00E1rea de trabalho\\anotacoes\\csharp\\projetos\\gnoc\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{636620BE-C7D5-4C1F-BC12-E9B47EC36681}|GNOC.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Views\\Dutys\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Dutys\\Index.cshtml",
+              "ToolTip": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Views\\Dutys\\Index.cshtml",
+              "RelativeToolTip": "Views\\Dutys\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-26T18:47:45.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-26T18:47:20.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-26T18:37:55.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-23T18:04:28.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "Controllers\\TasksController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAA+wBQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T19:24:07.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAGUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-16T19:19:53.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tasks.js",
+              "DocumentMoniker": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\wwwroot\\js\\tasks.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\tasks.js",
+              "ToolTip": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\wwwroot\\js\\tasks.js",
+              "RelativeToolTip": "wwwroot\\js\\tasks.js",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-16T18:35:46.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Views\\Tasks\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Tasks\\Index.cshtml",
+              "ToolTip": "C:\\Users\\alefy\\OneDrive\\\u00C1rea de Trabalho\\anotacoes\\csharp\\Projetos\\GNOC\\Views\\Tasks\\Index.cshtml",
+              "RelativeToolTip": "Views\\Tasks\\Index.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFQAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-16T18:35:38.71Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

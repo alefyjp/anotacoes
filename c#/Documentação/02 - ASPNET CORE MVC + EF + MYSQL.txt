@@ -1,0 +1,105 @@
+#######################################################################
+# 02 - BASE DE UM PROJETO ASPNET CORE MVC + EF + MYSQL  
+#######################################################################
+
+## SUMARIO
+# INSTALAR MYSQL (Servidor)
+# CRIAR PROJETO ASP.NET CORE MVC
+# INSTALAR ENTITY FRAMEWORK CORE + PROVIDER MYSQL
+# CONFIGURAR CONNECTION STRING
+# CRIAR MODELS
+# CRIAR DBCONTEXT
+# CRIAR MIGRATIONS
+
+## INSTALAR PACOTES NECESSARIOS
+
+# PASSO 01: ABRIR NUGET (GERENCIADOR DE PACOTES DO VISUAL STUDIO). 
+FERRAMENTAS->GERENCIADOR DE PACOTES DO NEGET->CONSOLE DO GERENCIADOR DE PACOTES
+
+# PASSO 02: INSERIR OS CÓDIGOS ABAIXO (VAI TENTAR INSTALAR A VERSÃO MAIS RECENTE DE CADA PACOTE)
+# DARÁ ERRO SE A VERSÃO DO .NET NÃO FOR A MESMA DOS PACOTES. SE ISSO ACONTECER, VAI PRECISAR RODAR OS COMANDOS 
+# INFORMADO A MESMA VESÃO DO .NET DO PROJETO
+
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Pomelo.EntityFrameworkCore.MySql
+
+# EXEMPLO: dotnet add package Microsoft.EntityFrameworkCore --version 8.0.0
+
+
+## CONFIGURAR PROVIDER DO MYSQL (appsettings.json)
+
+# PASSO 01: CONFIGURAR appsettings.json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "server=localhost;database=intranet_db;user=root;password=senha"
+  }
+}
+
+# Obs Devendo ficar assim:
+
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+
+  "ConnectionStrings": {
+    "DefaultConnection": "server=localhost;database=intranet_db;user=root;password=senha"
+  },
+
+  "AllowedHosts": "*"
+}
+
+# PASSO 03: CRIAR PRIMEIRA ENTIDADE MODEL(Usuario.cs)
+LOCALIZAR PASTA MODEL-> CLICAR COM BOTÃO DIREITO->ADICIONAR->CLASS...
+
+# EX:
+
+    public class Usuario
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+    }
+
+
+## CRIAR CONTEXTO(EF Core + MySQL)
+
+# PASSO 01: CRIAR NA RAIZ DO PROJETO UMA PASTA CHAMADA Data
+
+# PASSO 02: CRIAR DENTRO DESTA PASTA UMA CLASS AppDbContext.cs
+
+EX:
+public class AppDbContext : DbContext
+{
+    public DbSet<Usuario> Usuarios { get; set; }
+
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
+    {
+    }
+}
+
+
+# PASSO 05: REGISTRAR DBCONTEXT EM Program.cs
+# ADICIONE O CÓDIGO LOGO ABAIXO DE  builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        ServerVersion.AutoDetect(
+            builder.Configuration.GetConnectionString("DefaultConnection")
+        )
+    )
+);
+
+## PARA TESTAR, CRIE A PRIMEIRA MIGRAÇÃO
+
+# CRIAR UMA MIGRATION
+Add-Migration Inicial
+
+# ESCREVER MIGRATION NO BANCO DE DADOS
+Update-Database

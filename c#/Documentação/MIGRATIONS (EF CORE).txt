@@ -1,0 +1,46 @@
+#######################################################################
+# MIGRATIONS (EF CORE)
+#######################################################################
+
+## O QUE SAO MIGRATIONS
+# MIGRATIONS SERVEM PARA:
+# - CRIAR O BANCO DE DADOS
+# - ATUALIZAR TABELAS QUANDO OS MODELS MUDAM
+# - MANTER O BANCO SINCRONIZADO COM O CODIGO
+
+
+## PASSOS BASICOS
+# 1. CRIAR OU ALTERAR UM MODEL (EX: Usuario.cs)
+# 2. GERAR A MIGRATION
+# 3. APLICAR A MIGRATION NO BANCO
+
+
+#######################################################################
+# COMANDOS - VISUAL STUDIO (PACKAGE MANAGER CONSOLE)
+#######################################################################
+
+# CRIAR MIGRATION
+Add-Migration InitialCreate
+
+# APLICAR MIGRATION NO BANCO
+Update-Database
+
+# REMOVER A ULTIMA MIGRATION
+# (SO FUNCIONA SE A MIGRATION NAO FOI APLICADA)
+Remove-Migration
+
+
+#######################################################################
+# COMANDOS - TERMINAL (DOTNET CLI)
+#######################################################################
+
+# CRIAR MIGRATION
+dotnet ef migrations add InitialCreate
+
+# APLICAR MIGRATION NO BANCO
+dotnet ef database update
+
+# REMOVER A ULTIMA MIGRATION
+# (SO FUNCIONA SE A MIGRATION NAO FOI APLICADA)
+dotnet ef migrations remove
+

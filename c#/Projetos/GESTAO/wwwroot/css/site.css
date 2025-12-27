@@ -1,0 +1,66 @@
+/*----------------------------------- PADRAO DOTNET -------------------------------------*/
+html 
+{
+  font-size: 14px;
+}
+
+@media (min-width: 768px) 
+{
+  html 
+  {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*----------------------------------- PROGRAMADOR -------------------------------------*/
+
+/*Botões*/
+.botao-100 
+{
+    width:100%;
+}
+
+/*Menu*/
+#menu {
+    background-color: #791a24 !important;
+    
+}
+#menu a 
+{
+    color: white !important;
+}
+#menu a:hover 
+{
+    color: yellow !important;
+}
+#menu img 
+{
+    height:30px !important;
+}
+#user-image
+{
+    border-radius:100%;
+}
+
+#menu button
+{
+    color:white !important;
+}
+
+#menu .dropdown-menu a 
+{
+    color: black !important;
+}
