@@ -1,0 +1,17 @@
+########################################################################
+# TITULO: FIBINET UTILS
+# OBS:NAO REMOVER
+# AUTOR: NOC
+# ATUALIZACAO: 08/04/26
+########################################################################
+
+## ERROS ##
+
+# SENHA NAO FUNCIONA NO ACESSO WEB E SSH (DEFINIR NOVA SENHA)
+passwd root
+
+# SENHA NAO FUNCIONA NO ACESSO WEB E SSH (JA ATUALIZEI A SENHA, MESMO ASSIM NAO FUNCIONA)
+# ISSO VAI REINICIAR OS SERVICOS DE GERENCIAMENTO (NAO REINICIA AS VMS)
+
+/etc/init.d/hostd restart
+/etc/init.d/hostd vpxa restart
